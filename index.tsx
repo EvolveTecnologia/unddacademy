@@ -1,0 +1,31 @@
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import ErrorBoundary from './components/ErrorBoundary';
+import { LanguageProvider } from './context/LanguageContext';
+
+// Register Service Worker for PWA compliance and offline support
+if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch((err) => {
+      console.warn('[PWA] Service worker registration ignored in this context:', err);
+    });
+  });
+}
+
+const rootElement = document.getElementById('root');
+if (!rootElement) {
+  throw new Error("Could not find root element to mount to");
+}
+
+const root = ReactDOM.createRoot(rootElement);
+root.render(
+  <React.StrictMode>
+    <ErrorBoundary>
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
+    </ErrorBoundary>
+  </React.StrictMode>
+);

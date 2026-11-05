@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="triangleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1BA9A2" />
+      <stop offset="50%" stop-color="#148F89" />
+      <stop offset="100%" stop-color="#0E6B66" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <g transform="translate(20, 20)">
+    <!-- 3D Metallic Triangle "Play" Emblem with AT Monogram -->
+    <g transform="translate(70, 80)" filter="url(#softShadow)">
+      <!-- Outer metallic rounded triangle border -->
+      <polygon points="0,-60 80,0 0,60" fill="url(#triangleGrad)" stroke="#0E6B66" stroke-width="4" stroke-linejoin="round" />
+      <polygon points="6,-48 68,0 6,48" fill="#1BA9A2" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" opacity="0.9" />
+      <!-- AT Monogram -->
+      <text x="24" y="10" fill="#FFFFFF" font-family="'Plus Jakarta Sans', Montserrat, sans-serif" font-weight="900" font-size="28" text-anchor="middle" letter-spacing="-1px">AT</text>
+    </g>
+
+    <!-- Typography: Amani (Graphite) + Tech (Orange) + ACADEMY (Teal) -->
+    <g transform="translate(180, 75)" font-family="'Plus Jakarta Sans', Montserrat, sans-serif" font-weight="900" font-size="46" letter-spacing="-1px">
+      <text x="0" y="0">
+        <tspan fill="#1E1E1E">Amani</tspan>
+        <tspan fill="#F26A21">Tech</tspan>
+      </text>
+      <text x="4" y="28" fill="#1BA9A2" font-size="16" font-weight="800" letter-spacing="6px">ACADEMY</text>
+    </g>
+  </g>
+</svg>

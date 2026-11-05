@@ -1,0 +1,11 @@
+{
+  "name": "UNDD ACADEMY",
+  "description": "A UNDD Academy é a plataforma oficial de ensino da União Nacional de Docentes de Direita, é um ambiente virtual completo de capacitação profissional para jovens e adultos, acessível via mobile, tablet e desktop. Desenvolvida para preparar o aluno para as reais exigências do mercado de trabalho, a plataforma reúne cursos online em diversas áreas, lives interativas e atividades práticas com foco no desenvolvimento contínuo e na excelência técnica. Fundamentada no compromisso com o ensino livre de viés ideológico de esquerda, a UNDD Academy busca libertar as novas gerações de narrativas e distorções políticas, oferecendo um conhecimento técnico, ético e emancipador que prioriza o mérito, o protagonismo individual e o crescimento profissional sustentável.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

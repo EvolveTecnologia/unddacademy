@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Defensive window.fetch compatibility fix for extensions / test runners -->
+    <script>
+      (function() {
+        try {
+          var _origFetch = window.fetch;
+          var _currentFetch = _origFetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() { return _currentFetch; },
+            set: function(val) { _currentFetch = val; }
+          });
+        } catch(e) {}
+      })();
+    </script>
+    
+    <!-- Primary Meta Tags -->
+    <title>UNDD Academy - Plataforma Oficial de Ensino | União Nacional de Docentes de Direita</title>
+    <meta name="title" content="UNDD Academy - Plataforma Oficial de Ensino | União Nacional de Docentes de Direita">
+    <meta name="description" content="A UNDD Academy é a plataforma oficial de ensino da União Nacional de Docentes de Direita. Ambiente virtual completo de capacitação profissional para jovens e adultos, com ensino técnico, ético e emancipador livre de viés ideológico.">
+    <meta name="keywords" content="UNDD Academy, União Nacional de Docentes de Direita, UNDD, capacitação profissional, cursos online, ensino livre, mérito, mercado de trabalho, excelência técnica">
+    <meta name="author" content="União Nacional de Docentes de Direita - UNDD">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="UNDD Academy">
+    <meta property="og:url" content="https://undd.academy/">
+    <meta property="og:title" content="UNDD Academy - Plataforma Oficial de Ensino">
+    <meta property="og:description" content="Ambiente virtual de capacitação profissional da União Nacional de Docentes de Direita. Conhecimento técnico, ético e emancipador.">
+    
+    <!-- Primary OG Landscape Image -->
+    <meta property="og:image" content="/assets/aistudio/undd_d2d4f396.jpg">
+    <meta property="og:image:secure_url" content="/assets/aistudio/undd_d2d4f396.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Logo UNDD Academy Oficial">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UNDD Academy - Plataforma Oficial de Ensino">
+    <meta name="twitter:description" content="Ambiente virtual completo de capacitação profissional da União Nacional de Docentes de Direita.">
+    <meta name="twitter:image" content="/assets/aistudio/undd_d2d4f396.jpg">
+
+    <!-- Dynamic Origin OG Synchronizer for client execution -->
+    <script>
+      (function() {
+        try {
+          if (window.location.origin && !window.location.origin.includes('file://')) {
+            var origin = window.location.origin;
+            var ogUrl = document.querySelector('meta[property="og:url"]');
+            if (ogUrl) ogUrl.setAttribute('content', origin + window.location.pathname);
+          }
+        } catch(e) {}
+      })();
+    </script>
+
+    <!-- PWA & Mobile Optimization -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="alternate" type="application/json" href="/manifest.json">
+    <meta name="theme-color" content="#060B18">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="UNDD Academy">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/jpeg" href="/assets/aistudio/undd_d2d4f396.jpg">
+    <link rel="apple-touch-icon" href="/assets/aistudio/undd_d2d4f396.jpg">
+
+    <!-- Schema.org JSON-LD Structured Data for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "UNDD Academy",
+      "alternateName": "União Nacional de Docentes de Direita",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "description": "Plataforma oficial de ensino da União Nacional de Docentes de Direita, oferecendo cursos online de capacitação profissional para jovens e adultos.",
+      "url": "https://undd.academy",
+      "image": "/assets/aistudio/undd_d2d4f396.jpg",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                bg: '#060B18',
+                card: '#0C162E',
+                surface: '#0F1D3D',
+                border: '#1B2F5C',
+                primary: '#1E40AF',
+                'primary-hover': '#1D4ED8',
+                gold: '#F59E0B',
+                green: '#10B981',
+                text: '#FFFFFF',
+                'text-secondary': '#94A3B8',
+                'text-muted': '#64748B',
+                orange: '#EA580C',
+                dark: '#060B18',
+                graphite: '#0C162E',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', 'Inter', 'Montserrat', sans-serif;
+            background-color: #060B18;
+            color: #FFFFFF;
+            margin: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: pan-x pan-y; 
+            overscroll-behavior-y: none;
+        }
+        
+        * {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        *::-webkit-scrollbar {
+            display: none;
+            width: 0px;
+            height: 0px;
+            background: transparent;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-[#060B18] text-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

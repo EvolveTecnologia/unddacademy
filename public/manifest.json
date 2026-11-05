@@ -1,0 +1,39 @@
+{
+  "id": "/",
+  "name": "UNDD Academy - Plataforma Oficial de Ensino",
+  "short_name": "UNDD Academy",
+  "description": "Plataforma oficial de ensino da União Nacional de Docentes de Direita. Ambiente virtual de capacitação profissional para jovens e adultos, livre de viés ideológico, com foco no mérito e protagonismo individual.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#060B18",
+  "theme_color": "#060B18",
+  "categories": ["education", "business", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
