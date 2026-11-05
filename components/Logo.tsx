@@ -13,13 +13,14 @@ export const Logo: React.FC<LogoProps> = ({
   variant = 'horizontal',
   size = 'md',
 }) => {
-  const logoSrc = '/assets/aistudio/undd_d2d4f396.jpg';
+  const logoSrc = '/assets/aistudio/undd_b1797e20.png';
+  const flagSrc = '/assets/aistudio/7501795_59b517b5.png';
 
   const sizeMap = {
-    sm: 'h-8 sm:h-9',
-    md: 'h-10 sm:h-12',
-    lg: 'h-14 sm:h-16',
-    xl: 'h-18 sm:h-22',
+    sm: 'h-7 sm:h-8',
+    md: 'h-9 sm:h-11',
+    lg: 'h-12 sm:h-14',
+    xl: 'h-16 sm:h-20',
   };
 
   const currentHeight = sizeMap[size] || sizeMap.md;
@@ -28,9 +29,9 @@ export const Logo: React.FC<LogoProps> = ({
     return (
       <div className={`inline-flex items-center justify-center select-none overflow-hidden rounded-xl ${className}`}>
         <img 
-          src={logoSrc} 
+          src={flagSrc} 
           alt="UNDD Academy" 
-          className="w-full h-full object-cover filter drop-shadow-md"
+          className="w-full h-full object-contain filter drop-shadow-md"
           loading="eager"
         />
       </div>
@@ -42,7 +43,7 @@ export const Logo: React.FC<LogoProps> = ({
       <img 
         src={logoSrc} 
         alt="UNDD Academy - União Nacional de Docentes de Direita" 
-        className={`${currentHeight} w-auto object-contain rounded-lg filter drop-shadow-md`}
+        className={`${currentHeight} w-auto object-contain filter drop-shadow-md`}
         loading="eager"
       />
     </div>
