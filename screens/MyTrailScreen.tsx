@@ -1,11 +1,17 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import React, { useState, useRef, useMemo, useEffect } from 'react';
 import { 
   Target, Award, Zap, TrendingUp, BookOpen, Clock, 
   Brain, ChevronRight, Lock, Check, Edit2, X, Star, Calendar as CalendarIcon,
   Filter, BarChart2, Users, MessageSquare, Send, Bot, Sparkles, Crown, Medal, Flame,
-  FileText, Video, Download, CheckCircle, ChevronDown
+  FileText, Video, Download, CheckCircle, ChevronDown,
+  GraduationCap, Headphones, Search, ShoppingBag, CheckCircle2, Volume2, BookMarked
 } from 'lucide-react';
 import { COURSES, CATEGORIES_CONFIG } from '../constants';
+import { DIGITAL_BOOKS } from '../booksData';
+import { DigitalBook } from '../types';
+import { BookCard } from '../components/BookCard';
+import { BookFlipReaderModal } from '../components/BookFlipReaderModal';
+import { AudiobookPlayerModal } from '../components/AudiobookPlayerModal';
 
 interface LearningNode {
   id: string;
@@ -47,6 +53,68 @@ const ACHIEVEMENTS_DATA: Achievement[] = [
 ];
 
 const MyTrailScreen: React.FC = () => {
+  // Duas Abas Principais do Ambiente Acadêmico: Cursos vs Livros
+  const [academicMode, setAcademicMode] = useState<'cursos' | 'livros'>('cursos');
+  
+  // Estados para a Área de Livros Digitais & Audiobooks
+  const [bookFilter, setBookFilter] = useState<'todos' | 'gratuitos' | 'comprados' | 'audiobooks' | 'lendo'>('todos');
+  const [bookSearch, setBookSearch] = useState('');
+  const [selectedCategoryFilter, setSelectedCategoryFilter] = useState<string>('todas');
+  const [booksList, setBooksList] = useState<DigitalBook[]>(DIGITAL_BOOKS);
+  const [selectedBookForReader, setSelectedBookForReader] = useState<DigitalBook | null>(null);
+  const [selectedBookForAudio, setSelectedBookForAudio] = useState<DigitalBook | null>(null);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  // Categorias disponíveis de livros
+  const bookCategories = useMemo(() => {
+    const cats = Array.from(new Set(booksList.map(b => b.category)));
+    return ['todas', ...cats];
+  }, [booksList]);
+
+  // Livros filtrados pela busca, abas de status (gratuitos/comprados/audiobooks/lendo) e categoria
+  const filteredBooks = useMemo(() => {
+    return booksList.filter(book => {
+      if (bookSearch.trim()) {
+        const query = bookSearch.toLowerCase();
+        const matchesTitle = book.title.toLowerCase().includes(query);
+        const matchesAuthor = book.author.toLowerCase().includes(query);
+        const matchesCat = book.category.toLowerCase().includes(query);
+        if (!matchesTitle && !matchesAuthor && !matchesCat) return false;
+      }
+      if (selectedCategoryFilter !== 'todas' && book.category !== selectedCategoryFilter) {
+        return false;
+      }
+      if (bookFilter === 'gratuitos') return book.isFree;
+      if (bookFilter === 'comprados') return book.isPurchased && !book.isFree;
+      if (bookFilter === 'audiobooks') return book.type === 'audiobook' || book.type === 'both';
+      if (bookFilter === 'lendo') return (book.readingProgress || 0) > 0;
+      return true;
+    });
+  }, [booksList, bookSearch, selectedCategoryFilter, bookFilter]);
+
+  const bookStats = useMemo(() => {
+    const freeCount = booksList.filter(b => b.isFree).length;
+    const purchasedCount = booksList.filter(b => b.isPurchased && !b.isFree).length;
+    const audioCount = booksList.filter(b => b.type === 'audiobook' || b.type === 'both').length;
+    const readingCount = booksList.filter(b => (b.readingProgress || 0) > 0).length;
+    return { freeCount, purchasedCount, audioCount, readingCount, total: booksList.length };
+  }, [booksList]);
+
+  const handleOpenReader = (book: DigitalBook) => {
+    setSelectedBookForReader(book);
+  };
+
+  const handleOpenAudio = (book: DigitalBook) => {
+    setSelectedBookForAudio(book);
+  };
+
+  const handlePurchaseBook = (book: DigitalBook) => {
+    setBooksList(prev => prev.map(b => b.id === book.id ? { ...b, isPurchased: true } : b));
+    setToastMessage(`"${book.title}" adicionado com sucesso aos seus livros adquiridos!`);
+    setTimeout(() => setToastMessage(null), 4000);
+  };
+
+  // Estados dos Cursos
   const [activeTab, setActiveTab] = useState<'trilha' | 'avaliacoes' | 'calendario' | 'comunicacao' | 'biblioteca'>('trilha');
   const [selectedCourseId, setSelectedCourseId] = useState(COURSES[0].id);
   const [selectedProfileType, setSelectedProfileType] = useState('Profissionais');
@@ -270,6 +338,40 @@ const MyTrailScreen: React.FC = () => {
       
       {/* --- HEADER ACADÊMICO --- */}
       <header className="mb-8 flex flex-col gap-6">
+        
+        {/* DUAS ABAS PRINCIPAIS: CURSOS vs LIVROS DIGITAIS */}
+        <div className="flex flex-wrap items-center gap-3 p-1.5 bg-[#0C162E] border border-[#1B2F5C] rounded-2xl w-fit shadow-xl">
+          <button
+            onClick={() => setAcademicMode('cursos')}
+            className={`flex items-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider transition-all cursor-pointer ${
+              academicMode === 'cursos'
+                ? 'bg-gradient-to-r from-[#1E40AF] to-[#2563EB] text-white shadow-lg shadow-[#1E40AF]/40 scale-[1.02]'
+                : 'text-gray-400 hover:text-white hover:bg-white/5'
+            }`}
+          >
+            <GraduationCap size={18} />
+            <span>Cursos &amp; Aulas</span>
+            <span className="px-2 py-0.5 rounded-full text-[10px] font-black bg-black/30 text-white">
+              {COURSES.length}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setAcademicMode('livros')}
+            className={`flex items-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider transition-all cursor-pointer ${
+              academicMode === 'livros'
+                ? 'bg-gradient-to-r from-[#F59E0B] to-[#FBBF24] text-black shadow-lg shadow-[#F59E0B]/40 scale-[1.02]'
+                : 'text-gray-400 hover:text-white hover:bg-white/5'
+            }`}
+          >
+            <BookOpen size={18} />
+            <span>Livros &amp; Audiobooks</span>
+            <span className="px-2 py-0.5 rounded-full text-[10px] font-black bg-black/20 text-current">
+              {booksList.length}
+            </span>
+          </button>
+        </div>
+
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
@@ -279,24 +381,27 @@ const MyTrailScreen: React.FC = () => {
               </span>
             </div>
             <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white">
-              Ambiente Acadêmico UN2D
+              {academicMode === 'cursos' ? 'Ambiente Acadêmico UN2D' : 'Biblioteca Digital & Audiobooks'}
             </h1>
             <p className="text-xs md:text-sm text-gray-300 max-w-2xl mt-1 leading-relaxed">
-              Acompanhe sua evolução formativa, aulas práticas, entregas de projetos e interações pedagógicas com docentes comprometidos com a excelência.
+              {academicMode === 'cursos' 
+                ? 'Acompanhe sua evolução formativa, aulas práticas, entregas de projetos e interações pedagógicas com docentes comprometidos com a excelência.'
+                : 'Acesse obras clássicas gratuitas inclusas na sua matrícula ou explore sua estante de livros adquiridos. Leia no Leitor Bookflip ou ouça com narração profissional.'}
             </p>
           </div>
 
-          {/* Selecionador de Curso Ativo com Hover Estável e Pin de Clique */}
-          <div 
-            ref={dropdownContainerRef}
-            className="w-full lg:w-auto relative z-40"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
+          {/* Selecionador de Curso Ativo (Apenas visível na aba Cursos) */}
+          {academicMode === 'cursos' && (
             <div 
-              onClick={() => setIsDropdownOpen(prev => !prev)}
-              className="bg-[#0C162E] border border-[#1B2F5C] rounded-2xl p-3.5 flex items-center gap-3.5 cursor-pointer hover:border-[#3B82F6] transition-all min-w-[280px] sm:min-w-[340px] shadow-lg select-none"
+              ref={dropdownContainerRef}
+              className="relative"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
+              <div 
+                onClick={() => setIsDropdownOpen(prev => !prev)}
+                className="bg-[#0C162E] border border-[#1B2F5C] rounded-2xl p-3.5 flex items-center gap-3.5 cursor-pointer hover:border-[#3B82F6] transition-all min-w-[280px] sm:min-w-[340px] shadow-lg select-none"
+              >
               <div 
                 className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-black text-sm shrink-0 shadow-md"
                 style={{ backgroundColor: categoryConfig.color || '#1E40AF' }}
@@ -357,36 +462,40 @@ const MyTrailScreen: React.FC = () => {
               </div>
             )}
           </div>
+          )}
         </div>
 
-        {/* Navigation Tabs */}
-        <div className="flex overflow-x-auto hide-scrollbar gap-2 border-b border-[#1B2F5C] pb-1">
-          {tabs.map(tab => {
-            const Icon = tab.icon;
-            const isActive = activeTab === tab.id;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
-                className={`flex items-center gap-2 px-4 py-3 rounded-t-xl border-b-2 transition-all whitespace-nowrap cursor-pointer ${
-                  isActive 
-                    ? 'border-[#F59E0B] text-white bg-[#0C162E] font-bold shadow-sm' 
-                    : 'border-transparent text-gray-400 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                <Icon size={16} className={isActive ? 'text-[#F59E0B]' : ''} />
-                <span className="text-xs tracking-wide">{tab.label}</span>
-                {tab.badge && (
-                  <span className="bg-[#1E40AF] text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">{tab.badge}</span>
-                )}
-              </button>
-            );
-          })}
-        </div>
+        {/* Navigation Tabs (Apenas visível na aba Cursos) */}
+        {academicMode === 'cursos' && (
+          <div className="flex overflow-x-auto hide-scrollbar gap-2 border-b border-[#1B2F5C] pb-1">
+            {tabs.map(tab => {
+              const Icon = tab.icon;
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as any)}
+                  className={`flex items-center gap-2 px-4 py-3 rounded-t-xl border-b-2 transition-all whitespace-nowrap cursor-pointer ${
+                    isActive 
+                      ? 'border-[#F59E0B] text-white bg-[#0C162E] font-bold shadow-sm' 
+                      : 'border-transparent text-gray-400 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <Icon size={16} className={isActive ? 'text-[#F59E0B]' : ''} />
+                  <span className="text-xs tracking-wide">{tab.label}</span>
+                  {tab.badge && (
+                    <span className="bg-[#1E40AF] text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">{tab.badge}</span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        )}
       </header>
 
-      {/* --- GRID ACADÊMICO --- */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      {/* --- CONTEÚDO CONDICIONAL ACADÊMICO: CURSOS OU LIVROS --- */}
+      {academicMode === 'cursos' ? (
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         
         {/* CONTEÚDO PRINCIPAL (8 Colunas) */}
         <div className="lg:col-span-8 space-y-6">
@@ -737,6 +846,267 @@ const MyTrailScreen: React.FC = () => {
         </div>
 
       </div>
+      ) : (
+        /* --- ABA LIVROS DIGITAIS & AUDIOBOOKS (BOOKFLIP 3D) --- */
+        <div className="space-y-8 animate-in fade-in duration-300">
+          
+          {/* Banner Hero Hotmart-Style para Livros & Audiobooks */}
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#0C162E] via-[#1E40AF]/30 to-[#0C162E] border border-[#1B2F5C] p-6 sm:p-8 shadow-2xl">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#1E40AF]/20 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="relative z-10 max-w-3xl space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-[#F59E0B]/20 to-[#10B981]/20 border border-[#F59E0B]/30 text-[#F59E0B] text-[11px] font-black uppercase tracking-wider">
+                <BookMarked size={13} />
+                <span>Biblioteca Digital Interativa & Audiobooks</span>
+              </div>
+              
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
+                Leitura Emancipadora com Experiência <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#60A5FA] to-[#10B981]">Bookflip 3D</span>
+              </h2>
+              
+              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                Explore nosso acervo completo de obras formativas, filosofia política, fundamentos de livre mercado, liderança e tecnologia. Leia folheando as páginas na tela com som de virada e marcadores, ou ouça as versões em audiobook narradas em alto padrão.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-3 pt-2 text-xs text-gray-300">
+                <div className="flex items-center gap-1.5 bg-[#060B18]/60 px-3 py-1.5 rounded-xl border border-white/10">
+                  <BookOpen size={14} className="text-[#3B82F6]" />
+                  <span>Modo Livro Folheável 3D</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-[#060B18]/60 px-3 py-1.5 rounded-xl border border-white/10">
+                  <Headphones size={14} className="text-[#F59E0B]" />
+                  <span>Audiobooks com Velocidade Variável</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-[#060B18]/60 px-3 py-1.5 rounded-xl border border-white/10">
+                  <CheckCircle2 size={14} className="text-[#10B981]" />
+                  <span>Progresso Salvo Automaticamente</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Cards de Métricas do Acervo */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
+            <div className="p-4 bg-[#0C162E] rounded-2xl border border-[#1B2F5C] shadow-lg space-y-1">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider flex items-center gap-1">
+                <BookOpen size={12} className="text-blue-400" /> Acervo Total
+              </span>
+              <div className="text-2xl font-black text-white">{bookStats.total}</div>
+              <p className="text-[10px] text-gray-400">Títulos disponíveis</p>
+            </div>
+
+            <div className="p-4 bg-[#0C162E] rounded-2xl border border-emerald-500/30 shadow-lg space-y-1 bg-gradient-to-br from-[#10B981]/10 to-transparent">
+              <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1">
+                <CheckCircle2 size={12} /> Inclusos / Gratuitos
+              </span>
+              <div className="text-2xl font-black text-emerald-400">{bookStats.freeCount}</div>
+              <p className="text-[10px] text-gray-400">Acesso 100% liberado</p>
+            </div>
+
+            <div className="p-4 bg-[#0C162E] rounded-2xl border border-amber-500/30 shadow-lg space-y-1 bg-gradient-to-br from-[#F59E0B]/10 to-transparent">
+              <span className="text-[10px] font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1">
+                <ShoppingBag size={12} /> Meus Adquiridos
+              </span>
+              <div className="text-2xl font-black text-[#F59E0B]">{bookStats.purchasedCount}</div>
+              <p className="text-[10px] text-gray-400">Edições especiais</p>
+            </div>
+
+            <div className="p-4 bg-[#0C162E] rounded-2xl border border-[#1B2F5C] shadow-lg space-y-1">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider flex items-center gap-1">
+                <Headphones size={12} className="text-[#F59E0B]" /> Audiobooks
+              </span>
+              <div className="text-2xl font-black text-white">{bookStats.audioCount}</div>
+              <p className="text-[10px] text-gray-400">Com narração em áudio</p>
+            </div>
+
+            <div className="col-span-2 sm:col-span-1 p-4 bg-[#0C162E] rounded-2xl border border-[#1B2F5C] shadow-lg space-y-1">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider flex items-center gap-1">
+                <BookMarked size={12} className="text-[#60A5FA]" /> Em Leitura
+              </span>
+              <div className="text-2xl font-black text-[#60A5FA]">{bookStats.readingCount}</div>
+              <p className="text-[10px] text-gray-400">Obras em andamento</p>
+            </div>
+          </div>
+
+          {/* Barra de Filtros, Categorias e Busca */}
+          <div className="p-4 bg-[#0C162E] rounded-2xl border border-[#1B2F5C] space-y-3.5">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+              {/* Abas de Filtro de Acesso */}
+              <div className="flex overflow-x-auto hide-scrollbar gap-1.5 p-1 bg-[#060B18] rounded-xl border border-white/5">
+                {[
+                  { id: 'todos', label: 'Todos os Títulos', count: bookStats.total },
+                  { id: 'gratuitos', label: 'Inclusos & Gratuitos', count: bookStats.freeCount },
+                  { id: 'comprados', label: 'Meus Livros Adquiridos', count: bookStats.purchasedCount },
+                  { id: 'audiobooks', label: 'Audiobooks', count: bookStats.audioCount },
+                  { id: 'lendo', label: 'Em Leitura', count: bookStats.readingCount },
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => setBookFilter(item.id as any)}
+                    className={`px-3 py-2 rounded-lg text-xs font-bold transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+                      bookFilter === item.id
+                        ? 'bg-[#1E40AF] text-white shadow-md'
+                        : 'text-gray-400 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-black ${
+                      bookFilter === item.id ? 'bg-white/20 text-white' : 'bg-white/5 text-gray-400'
+                    }`}>
+                      {item.count}
+                    </span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Busca e Categoria */}
+              <div className="flex flex-col sm:flex-row items-center gap-2">
+                <div className="relative w-full sm:w-64">
+                  <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                  <input
+                    type="text"
+                    value={bookSearch}
+                    onChange={(e) => setBookSearch(e.target.value)}
+                    placeholder="Buscar livro, autor..."
+                    className="w-full pl-9 pr-8 py-2 bg-[#060B18] border border-[#1B2F5C] focus:border-blue-500 rounded-xl text-xs text-white placeholder-gray-500 outline-none transition-colors"
+                  />
+                  {bookSearch && (
+                    <button 
+                      onClick={() => setBookSearch('')}
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                    >
+                      <X size={12} />
+                    </button>
+                  )}
+                </div>
+
+                <select
+                  value={selectedCategoryFilter}
+                  onChange={(e) => setSelectedCategoryFilter(e.target.value)}
+                  className="w-full sm:w-auto bg-[#060B18] border border-[#1B2F5C] text-gray-300 text-xs rounded-xl px-3 py-2 outline-none focus:border-blue-500 cursor-pointer"
+                >
+                  <option value="todas">Todas as Categorias</option>
+                  {bookCategories.filter(c => c !== 'todas').map(cat => (
+                    <option key={cat} value={cat}>{cat}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {/* Grid de Livros */}
+          {filteredBooks.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {filteredBooks.map((book) => (
+                <div key={book.id} className="h-full flex flex-col">
+                  <BookCard
+                    book={book}
+                    onRead={handleOpenReader}
+                    onListen={handleOpenAudio}
+                    layout="grid"
+                  />
+                  {/* Se for livro que ainda não foi comprado nem é gratuito, botão simulado para adquirir */}
+                  {!book.isFree && !book.isPurchased && (
+                    <div className="mt-2">
+                      <button
+                        onClick={() => handlePurchaseBook(book)}
+                        className="w-full py-2 bg-gradient-to-r from-[#F59E0B] to-[#D97706] hover:brightness-110 active:scale-95 text-black font-black text-xs rounded-xl uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 shadow-lg cursor-pointer"
+                      >
+                        <ShoppingBag size={13} />
+                        <span>Adquirir por R$ {book.price?.toFixed(2) || '49,90'}</span>
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="p-12 text-center bg-[#0C162E] rounded-3xl border border-[#1B2F5C] space-y-4">
+              <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mx-auto text-gray-400">
+                <BookOpen size={28} />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-base font-bold text-white">Nenhum livro ou audiobook encontrado</h3>
+                <p className="text-xs text-gray-400 max-w-md mx-auto">
+                  Não encontramos títulos para o filtro selecionado. Tente alterar os termos de busca ou redefinir a categoria.
+                </p>
+              </div>
+              <button
+                onClick={() => { setBookFilter('todos'); setBookSearch(''); setSelectedCategoryFilter('todas'); }}
+                className="px-5 py-2.5 bg-[#1E40AF] hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition-all cursor-pointer"
+              >
+                Limpar Todos os Filtros
+              </button>
+            </div>
+          )}
+
+          {/* Rodapé Informativo da Biblioteca UN2D Hotmart-Style */}
+          <div className="p-6 bg-gradient-to-br from-[#0C162E] to-[#060B18] rounded-3xl border border-[#1B2F5C] grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-300">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-white font-bold text-sm">
+                <BookOpen size={16} className="text-[#3B82F6]" />
+                <span>Leitor Bookflip 3D</span>
+              </div>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                Experiência de livro físico com virada suave de página, modo noite/sépia, zoom, índice de capítulos e retomada automática do ponto onde parou.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-white font-bold text-sm">
+                <Headphones size={16} className="text-[#F59E0B]" />
+                <span>Audiobooks Narrados</span>
+              </div>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                Aprenda enquanto se desloca ou realiza outras atividades. Controle de velocidade de 0.75x até 2x com avanço rápido de 15 segundos.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-white font-bold text-sm">
+                <Award size={16} className="text-[#10B981]" />
+                <span>Acesso Permanente</span>
+              </div>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                Todas as obras gratuitas inclusas na sua matrícula UN2D Academy e livros especiais adquiridos ficam permanentemente vinculados ao seu perfil.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      )}
+
+      {/* Toast Feedback */}
+      {toastMessage && (
+        <div className="fixed bottom-6 right-6 z-50 bg-[#10B981] text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-300 font-bold text-xs">
+          <CheckCircle2 size={18} />
+          <span>{toastMessage}</span>
+        </div>
+      )}
+
+      {/* Modal Leitor Bookflip 3D */}
+      {selectedBookForReader && (
+        <BookFlipReaderModal
+          book={selectedBookForReader}
+          onClose={() => setSelectedBookForReader(null)}
+          onOpenAudiobook={(b) => {
+            setSelectedBookForReader(null);
+            setSelectedBookForAudio(b);
+          }}
+        />
+      )}
+
+      {/* Modal Audiobook Player */}
+      {selectedBookForAudio && (
+        <AudiobookPlayerModal
+          book={selectedBookForAudio}
+          onClose={() => setSelectedBookForAudio(null)}
+          onOpenBookflip={(b) => {
+            setSelectedBookForAudio(null);
+            setSelectedBookForReader(b);
+          }}
+        />
+      )}
 
     </div>
   );

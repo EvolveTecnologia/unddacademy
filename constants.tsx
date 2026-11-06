@@ -931,3 +931,6 @@ export const COURSES: Course[] = [
   ...ALIMENTOS_COURSES,
   ...GESTAO_COURSES
 ];
+
+export { DIGITAL_BOOKS } from './booksData';
+

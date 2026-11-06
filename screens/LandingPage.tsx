@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   Monitor, Smartphone, Tablet, Tv, ChevronDown, 
   GraduationCap, Leaf, Cpu, Utensils, Briefcase, Globe, 
-  Award, Sparkles, ShieldCheck, Zap, Play, Check, ChevronRight
+  Award, Sparkles, ShieldCheck, Zap, Play, Check, ChevronRight,
+  BookOpen, Headphones, BookMarked, Star, Volume2
 } from 'lucide-react';
 import { 
   COURSES, 
@@ -12,6 +13,7 @@ import {
   SUSTENTABILIDADE_COURSES, 
   GESTAO_COURSES 
 } from '../constants';
+import { DIGITAL_BOOKS } from '../booksData';
 import { Category } from '../types';
 import CourseCard from '../components/CourseCard';
 import LandingFooter from '../components/LandingFooter';
@@ -334,6 +336,136 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter, onSelectCourse }) =>
               <div className="absolute inset-0 bg-gradient-to-t from-[#060B18]/60 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* --- SEÇÃO LIVROS DIGITAIS & AUDIOBOOKS (Semelhante a Hotmart) --- */}
+      <section className="py-20 px-6 md:px-14 bg-[#081024] border-b border-[#1B2F5C] relative overflow-hidden">
+        {/* Glow ambient background */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#1E40AF]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-[#F59E0B]/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto space-y-14 relative z-10">
+          
+          {/* Header da Seção */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+            <div className="max-w-2xl space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F59E0B]/20 border border-[#F59E0B]/40 text-[#F59E0B] text-xs font-black uppercase tracking-widest">
+                <Sparkles size={13} />
+                <span>Novidade na UN2D Academy</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+                Livros Digitais &amp; Audiobooks
+              </h2>
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                Semelhante aos maiores ecossistemas educacionais como a Hotmart, a UN2D Academy conta agora com uma livraria virtual completa. Tenha acesso a obras consagradas de filosofia, economia, liderança e política para ler folheando página a página no inovador <strong>Leitor Bookflip</strong> ou ouvir com <strong>narração profissional</strong> em qualquer lugar.
+              </p>
+            </div>
+
+            <button
+              onClick={onEnter}
+              className="px-7 py-3.5 bg-gradient-to-r from-[#1E40AF] to-[#2563EB] hover:from-[#1D4ED8] hover:to-[#1E40AF] text-white rounded-2xl text-xs font-black uppercase tracking-wider transition-all shadow-xl shadow-[#1E40AF]/30 hover:scale-105 active:scale-95 cursor-pointer self-start lg:self-auto shrink-0 flex items-center gap-2"
+            >
+              <BookOpen size={16} />
+              <span>Acessar Biblioteca Digital</span>
+            </button>
+          </div>
+
+          {/* 3 Pilares da Experiência Digital */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-[#0C162E] border border-[#1B2F5C] hover:border-[#3B82F6] rounded-2xl p-6 space-y-3.5 transition-all shadow-xl group">
+              <div className="w-12 h-12 rounded-xl bg-[#1E40AF]/20 border border-[#3B82F6]/40 flex items-center justify-center text-[#60A5FA] group-hover:scale-110 transition-transform">
+                <BookOpen size={24} />
+              </div>
+              <h3 className="text-base font-black text-white uppercase">Leitor Bookflip Imersivo</h3>
+              <p className="text-xs text-gray-300 leading-relaxed">
+                Experiência de leitura realista com virada de página 3D em duas páginas no computador e página única ergonômica no celular, modo sépia, noturno e marcadores.
+              </p>
+            </div>
+
+            <div className="bg-[#0C162E] border border-[#1B2F5C] hover:border-[#F59E0B] rounded-2xl p-6 space-y-3.5 transition-all shadow-xl group">
+              <div className="w-12 h-12 rounded-xl bg-[#F59E0B]/20 border border-[#F59E0B]/40 flex items-center justify-center text-[#F59E0B] group-hover:scale-110 transition-transform">
+                <Headphones size={24} />
+              </div>
+              <h3 className="text-base font-black text-white uppercase">Audiobooks com Narração</h3>
+              <p className="text-xs text-gray-300 leading-relaxed">
+                Aprenda enquanto se desloca ou realiza outras tarefas diárias. Áudios em alta definição com velocidade ajustável de 0.75x a 2x e sincronização de capítulos.
+              </p>
+            </div>
+
+            <div className="bg-[#0C162E] border border-[#1B2F5C] hover:border-[#10B981] rounded-2xl p-6 space-y-3.5 transition-all shadow-xl group">
+              <div className="w-12 h-12 rounded-xl bg-[#10B981]/20 border border-[#10B981]/40 flex items-center justify-center text-[#10B981] group-hover:scale-110 transition-transform">
+                <ShieldCheck size={24} />
+              </div>
+              <h3 className="text-base font-black text-white uppercase">Títulos Inclusos &amp; Acervo Premium</h3>
+              <p className="text-xs text-gray-300 leading-relaxed">
+                Obras clássicas gratuitas incluídas na matrícula e lançamentos com condições exclusivas, sem viés ideológico e com rigor intelectual perene.
+              </p>
+            </div>
+          </div>
+
+          {/* Vitrine de Livros em Destaque */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm sm:text-base font-black uppercase text-white tracking-wider flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#10B981]" />
+                Obras em Destaque no Catálogo
+              </h3>
+              <span className="text-xs text-gray-400 font-bold">Acesse pelo aplicativo</span>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              {DIGITAL_BOOKS.slice(0, 4).map(book => (
+                <div 
+                  key={book.id}
+                  onClick={onEnter}
+                  className="bg-[#0C162E] hover:bg-[#0F1D3D] border border-[#1B2F5C] hover:border-[#3B82F6] rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer flex flex-col group"
+                >
+                  <div className="relative aspect-[3/4] bg-[#060B18] overflow-hidden">
+                    <img 
+                      src={book.coverImage} 
+                      alt={book.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0C162E] via-transparent to-black/30 pointer-events-none" />
+                    
+                    <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between">
+                      <span className="px-2 py-0.5 rounded-lg text-[9px] font-black uppercase bg-[#1E40AF]/90 text-white backdrop-blur-md">
+                        {book.type === 'both' ? 'E-Book + Áudio' : book.type === 'audiobook' ? 'Audiobook' : 'E-Book'}
+                      </span>
+                      {book.isFree && (
+                        <span className="px-2 py-0.5 rounded-lg text-[9px] font-black uppercase bg-[#10B981]/90 text-white backdrop-blur-md">
+                          Incluso
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="p-4 flex-1 flex flex-col justify-between space-y-2">
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#60A5FA]">
+                        {book.category}
+                      </span>
+                      <h4 className="text-xs sm:text-sm font-bold text-white line-clamp-2 mt-0.5 group-hover:text-blue-300 transition-colors">
+                        {book.title}
+                      </h4>
+                      <p className="text-[11px] text-gray-400 truncate mt-1">
+                        {book.author}
+                      </p>
+                    </div>
+
+                    <div className="pt-2 border-t border-[#1B2F5C]/60 flex items-center justify-between text-[10px] text-gray-400">
+                      <span>{book.totalPages} págs</span>
+                      {book.audioDuration && (
+                        <span className="text-[#F59E0B] font-bold">{book.audioDuration}</span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 

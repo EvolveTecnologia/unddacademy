@@ -88,3 +88,40 @@ export interface Certificate {
   hours?: number;
   grade?: string;
 }
+
+export interface BookPage {
+  pageNumber: number;
+  chapterTitle?: string;
+  content: string;
+}
+
+export interface DigitalBook {
+  id: string;
+  title: string;
+  subtitle?: string;
+  author: string;
+  authorRole?: string;
+  coverImage: string;
+  category: string;
+  type: 'ebook' | 'audiobook' | 'both';
+  totalPages: number;
+  audioDuration?: string;
+  rating: number;
+  reviewsCount?: number;
+  description: string;
+  isFree: boolean;
+  isPurchased?: boolean;
+  price?: number;
+  publishedYear: string;
+  readingProgress?: number; // 0 a 100
+  currentPage?: number;
+  narrator?: string;
+  audioChapters?: {
+    id: string;
+    title: string;
+    duration: string;
+    audioUrl?: string;
+  }[];
+  pages: BookPage[];
+}
+

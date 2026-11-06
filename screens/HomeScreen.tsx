@@ -9,9 +9,13 @@ import {
   ALIMENTOS_COURSES, 
   GESTAO_COURSES 
 } from '../constants';
-import { Category, Course } from '../types';
+import { Category, Course, DigitalBook } from '../types';
 import CourseCard from '../components/CourseCard';
-import { GraduationCap, Leaf, Cpu, Utensils, Briefcase, Globe, Check, Plus, Play, ChevronRight, Sparkles } from 'lucide-react';
+import { BookCard } from '../components/BookCard';
+import { BookFlipReaderModal } from '../components/BookFlipReaderModal';
+import { AudiobookPlayerModal } from '../components/AudiobookPlayerModal';
+import { DIGITAL_BOOKS } from '../booksData';
+import { GraduationCap, Leaf, Cpu, Utensils, Briefcase, Globe, Check, Plus, Play, ChevronRight, Sparkles, BookOpen, Headphones } from 'lucide-react';
 import { Logo } from '../components/Logo';
 
 interface HomeScreenProps {
@@ -28,6 +32,8 @@ const HomeScreen: React.FC<HomeScreenProps> = ({
   onToggleMyList 
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedBookForReader, setSelectedBookForReader] = useState<DigitalBook | null>(null);
+  const [selectedBookForAudio, setSelectedBookForAudio] = useState<DigitalBook | null>(null);
   const touchStartX = useRef<number | null>(null);
 
   // Hero Banners: Pérolas do Profº Olavo de Carvalho e Neo Marxismo em destaque
@@ -315,6 +321,47 @@ const HomeScreen: React.FC<HomeScreenProps> = ({
           courses={IDIOMAS_COURSES} 
         />
 
+        {/* --- 📚 LIVROS DIGITAIS & AUDIOBOOKS (Entre a 3ª e a 4ª Categoria) --- */}
+        <section className="mb-10 group/section">
+          <div className={`flex items-center justify-between mb-3.5 ${CONTENT_PADDING}`}>
+            <div className="flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B] shadow-sm animate-pulse" />
+              <div className="flex items-center gap-2">
+                <h2 className="text-sm sm:text-base md:text-lg font-black text-white tracking-wide uppercase">
+                  LIVROS DIGITAIS &amp; AUDIOBOOKS
+                </h2>
+                <span className="px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider bg-[#F59E0B]/20 text-[#F59E0B] border border-[#F59E0B]/30 hidden sm:inline-block">
+                  Leitura Bookflip &amp; Áudio
+                </span>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-gray-400">
+              <span className="text-[#60A5FA] flex items-center gap-1.5 font-bold">
+                <BookOpen size={13} /> Biblioteca UN2D
+              </span>
+            </div>
+          </div>
+
+          {/* Carrossel de Livros seguindo o padrão responsivo das outras categorias */}
+          <div className="relative">
+            <div className={`flex gap-3.5 sm:gap-4 md:gap-5 overflow-x-auto hide-scrollbar py-2 ${CONTENT_PADDING} scroll-smooth items-stretch`}>
+              {DIGITAL_BOOKS.map(book => (
+                <div 
+                  key={book.id} 
+                  className="w-40 sm:w-48 md:w-60 lg:w-72 flex-shrink-0"
+                >
+                  <BookCard 
+                    book={book} 
+                    onRead={(b) => setSelectedBookForReader(b)}
+                    onListen={(b) => setSelectedBookForAudio(b)}
+                  />
+                </div>
+              ))}
+              <div className="w-4 flex-shrink-0" />
+            </div>
+          </div>
+        </section>
+
         {/* 4. MEIO AMBIENTE & SUSTENTABILIDADE */}
         <SectionRow 
           title="MEIO AMBIENTE & SUSTENTABILIDADE" 
@@ -346,6 +393,29 @@ const HomeScreen: React.FC<HomeScreenProps> = ({
           to { transform: scale(1.08); }
         }
       `}</style>
+
+      {/* Modais de Leitura Bookflip e Player de Audiobook */}
+      {selectedBookForReader && (
+        <BookFlipReaderModal
+          book={selectedBookForReader}
+          onClose={() => setSelectedBookForReader(null)}
+          onOpenAudiobook={(b) => {
+            setSelectedBookForReader(null);
+            setSelectedBookForAudio(b);
+          }}
+        />
+      )}
+
+      {selectedBookForAudio && (
+        <AudiobookPlayerModal
+          book={selectedBookForAudio}
+          onClose={() => setSelectedBookForAudio(null)}
+          onOpenBookflip={(b) => {
+            setSelectedBookForAudio(null);
+            setSelectedBookForReader(b);
+          }}
+        />
+      )}
 
     </div>
   );
