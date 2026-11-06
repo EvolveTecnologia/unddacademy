@@ -13,7 +13,7 @@ export const Logo: React.FC<LogoProps> = ({
   variant = 'horizontal',
   size = 'md',
 }) => {
-  const logoSrc = '/assets/aistudio/undd_b1797e20.png';
+  const logoSrc = '/assets/aistudio/un2d_710ff440.png';
   const flagSrc = '/assets/aistudio/7501795_59b517b5.png';
 
   const sizeMap = {
@@ -30,7 +30,7 @@ export const Logo: React.FC<LogoProps> = ({
       <div className={`inline-flex items-center justify-center select-none overflow-hidden rounded-xl ${className}`}>
         <img 
           src={flagSrc} 
-          alt="UNDD Academy" 
+          alt="UN2D Academy" 
           className="w-full h-full object-contain filter drop-shadow-md"
           loading="eager"
         />
@@ -42,7 +42,7 @@ export const Logo: React.FC<LogoProps> = ({
     <div className={`inline-flex items-center select-none ${className}`}>
       <img 
         src={logoSrc} 
-        alt="UNDD Academy - União Nacional de Docentes de Direita" 
+        alt="UN2D Academy - União Nacional de Docentes de Direita" 
         className={`${currentHeight} w-auto object-contain filter drop-shadow-md`}
         loading="eager"
       />

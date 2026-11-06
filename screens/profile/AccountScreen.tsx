@@ -23,7 +23,7 @@ export const AccountScreen: React.FC<AccountScreenProps> = ({ user, onUpdate }) 
     avatar: user.avatar || '/perfil.jpg',
     level: user.level || 8,
     badges: user.badges || ['Certificado', 'Aluno Destaque'],
-    plan: user.plan || 'Acesso Completo UNDD Academy',
+    plan: user.plan || 'Acesso Completo UN2D Academy',
     phone: user.phone || '(11) 98765-4321',
     title: user.title || 'Profissional de Tecnologia e Gestão',
     bio: user.bio || 'Estudante dedicado ao desenvolvimento técnico, liderança ética e aperfeiçoamento profissional contínuo.',
@@ -324,7 +324,7 @@ export const AccountScreen: React.FC<AccountScreenProps> = ({ user, onUpdate }) 
                 value={formData.bio}
                 onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
                 className="w-full bg-[#060B18] border border-[#1B2F5C] rounded-xl p-3.5 text-xs text-white outline-none focus:border-blue-500 transition-colors resize-none leading-relaxed"
-                placeholder="Descreva sua trajetória profissional e metas na UNDD Academy..."
+                placeholder="Descreva sua trajetória profissional e metas na UN2D Academy..."
               />
             </div>
           </div>
@@ -563,7 +563,7 @@ export const AccountScreen: React.FC<AccountScreenProps> = ({ user, onUpdate }) 
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider border border-emerald-500/30">
                   Plano Ativo
                 </span>
-                <h4 className="text-sm font-bold text-white mt-1.5">Acesso Completo UNDD Academy</h4>
+                <h4 className="text-sm font-bold text-white mt-1.5">Acesso Completo UN2D Academy</h4>
                 <p className="text-xs text-gray-400 mt-0.5">Acesso ilimitado a todos os cursos, lives interativas e emissão de certificados oficiais.</p>
               </div>
               <span className="text-xs font-mono text-emerald-400 font-bold bg-emerald-500/10 px-3 py-1.5 rounded-xl border border-emerald-500/20">
@@ -575,7 +575,7 @@ export const AccountScreen: React.FC<AccountScreenProps> = ({ user, onUpdate }) 
               <h4 className="text-[11px] font-bold text-gray-300 uppercase mb-3">Histórico de Matrícula</h4>
               <div className="space-y-2">
                 {[
-                  { date: '15/01/2026', desc: 'Matrícula Oficial UNDD Academy - Ciclo Anual', status: 'Confirmada', id: 'MAT-2026-904' },
+                  { date: '15/01/2026', desc: 'Matrícula Oficial UN2D Academy - Ciclo Anual', status: 'Confirmada', id: 'MAT-2026-904' },
                   { date: '10/02/2026', desc: 'Adesão ao Programa de Capacitação Técnica EJA', status: 'Concluída', id: 'MAT-2026-118' }
                 ].map(item => (
                   <div key={item.id} className="p-3 bg-[#060B18] rounded-xl border border-white/5 flex items-center justify-between text-xs">

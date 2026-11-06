@@ -94,7 +94,7 @@ export const SettingsScreen: React.FC = () => {
           <Globe size={15} /> Idioma da Interface
         </h3>
         <p className="text-[10px] text-gray-400">
-          Selecione seu idioma de preferência (Português Brasileiro padrão oficial da UNDD Academy).
+          Selecione seu idioma de preferência (Português Brasileiro padrão oficial da UN2D Academy).
         </p>
         <LanguageSelector variant="settings" onLanguageChange={() => showToast('Idioma atualizado com sucesso.')} />
       </section>
@@ -241,7 +241,7 @@ export const SettingsScreen: React.FC = () => {
       {/* Section 4: Versão & Institucional */}
       <div className="p-4 rounded-2xl bg-[#0C162E] border border-[#1B2F5C] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-gray-400">
         <div>
-          <span className="font-bold text-white block">UNDD Academy • Versão 3.0 Oficial</span>
+          <span className="font-bold text-white block">UN2D Academy • Versão 3.0 Oficial</span>
           <span className="text-[10px]">União Nacional de Docentes de Direita — Capacitação e Excelência Técnica.</span>
         </div>
         <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-lg">

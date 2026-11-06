@@ -1,6 +1,6 @@
 :root {
-  /* UNDD Academy Design Tokens - União Nacional de Docentes de Direita */
-  /* BACKGROUND / SUPERFÍCIE (Azul profundo da Logo UNDD) */
+  /* UN2D Academy Design Tokens - União Nacional de Docentes de Direita */
+  /* BACKGROUND / SUPERFÍCIE (Azul profundo da Logo UN2D) */
   --color-brand-bg: #060B18;
   --color-brand-card: #0C162E;
   --color-brand-surface: #0F1D3D;
@@ -12,7 +12,7 @@
   --color-brand-primary-hover: #1D4ED8;
   --color-brand-primary-light: #3B82F6;
 
-  /* ACCENT / BRASIL FLAGS (Fita Ouro & Verde da Logo UNDD) */
+  /* ACCENT / BRASIL FLAGS (Fita Ouro & Verde da Logo UN2D) */
   --color-brand-gold: #F59E0B;
   --color-brand-gold-hover: #D97706;
   --color-brand-green: #10B981;

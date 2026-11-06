@@ -20,7 +20,7 @@ const LegalScreen: React.FC = () => {
               Termos Gerais de Uso da Plataforma
             </h2>
             <p className="text-xs text-gray-300 leading-relaxed">
-              Bem-vindo à UNDD Academy, a plataforma oficial de ensino da União Nacional de Docentes de Direita (UNDD). Ao acessar nosso ambiente virtual de aprendizagem, você concorda integralmente com as presentes diretrizes institucionais e regulamentos pedagógicos.
+              Bem-vindo à UN2D Academy, a plataforma oficial de ensino da União Nacional de Docentes de Direita (UN2D). Ao acessar nosso ambiente virtual de aprendizagem, você concorda integralmente com as presentes diretrizes institucionais e regulamentos pedagógicos.
             </p>
             
             <div className="space-y-3 pt-2">
@@ -37,7 +37,7 @@ const LegalScreen: React.FC = () => {
                 2. Propriedade Intelectual dos Cursos
               </h3>
               <p className="text-xs text-gray-300 leading-relaxed">
-                A integralidade dos materiais didáticos (videoaulas, apostilas em PDF, avaliações práticas, apresentações e matrizes de ensino) é de propriedade intelectual exclusiva da UNDD e de seus docentes associados.
+                A integralidade dos materiais didáticos (videoaulas, apostilas em PDF, avaliações práticas, apresentações e matrizes de ensino) é de propriedade intelectual exclusiva da UN2D e de seus docentes associados.
               </p>
             </div>
           </div>
@@ -49,7 +49,7 @@ const LegalScreen: React.FC = () => {
               Compromisso com o Ensino Livre de Viés Ideológico
             </h2>
             <p className="text-xs text-gray-300 leading-relaxed">
-              A UNDD Academy fundamenta sua prática pedagógica no compromisso inegociável com a verdade factual, o rigor técnico e o mérito individual, resguardando os alunos de narrativas político-partidárias e distorções ideológicas de esquerda.
+              A UN2D Academy fundamenta sua prática pedagógica no compromisso inegociável com a verdade factual, o rigor técnico e o mérito individual, resguardando os alunos de narrativas político-partidárias e distorções ideológicas de esquerda.
             </p>
             
             <ul className="list-disc pl-5 space-y-2 text-xs text-gray-300">
@@ -121,7 +121,7 @@ const LegalScreen: React.FC = () => {
         <div className="max-w-3xl mx-auto bg-[#0C162E] border border-[#1B2F5C] p-6 sm:p-8 rounded-3xl shadow-xl">
           {renderContent()}
           <p className="text-center text-[10px] text-gray-500 mt-12 pt-6 border-t border-white/5 uppercase tracking-wider">
-            Última Revisão: Novembro de 2026 • Departamento Jurídico e Pedagógico da UNDD
+            Última Revisão: Novembro de 2026 • Departamento Jurídico e Pedagógico da UN2D
           </p>
         </div>
       </div>

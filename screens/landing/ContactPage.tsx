@@ -23,7 +23,7 @@ const ContactPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Olá! Sou o assistente de atendimento da UNDD Academy. Para direcionarmos seu contato com a equipe certa, qual é o seu nome completo?',
+      text: 'Olá! Sou o assistente de atendimento da UN2D Academy. Para direcionarmos seu contato com a equipe certa, qual é o seu nome completo?',
       sender: 'bot',
       type: 'text'
     }
@@ -119,14 +119,14 @@ const ContactPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           nextStep = 'interest';
           botResponse = {
             id: Date.now().toString(),
-            text: 'Qual é o seu principal interesse com a UNDD Academy? (Selecione uma ou mais opções abaixo)',
+            text: 'Qual é o seu principal interesse com a UN2D Academy? (Selecione uma ou mais opções abaixo)',
             sender: 'bot',
             type: 'options',
             options: [
               'Capacitação Profissional para Jovens e Adultos',
               'Parceria Corporativa / Treinamento de Equipes',
               'Matrícula e Cursos Disponíveis',
-              'Corpo Docente da UNDD & Aulas Práticas',
+              'Corpo Docente da UN2D & Aulas Práticas',
               'Educação Básica & EJA',
               'Outro Assunto'
             ]
@@ -138,7 +138,7 @@ const ContactPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           nextStep = 'summary';
           botResponse = {
             id: Date.now().toString(),
-            text: 'Agradecemos o seu contato! Seus dados foram encaminhados com sucesso para a secretaria institucional da UNDD Academy. Entraremos em contato em até 24h úteis.',
+            text: 'Agradecemos o seu contato! Seus dados foram encaminhados com sucesso para a secretaria institucional da UN2D Academy. Entraremos em contato em até 24h úteis.',
             sender: 'bot',
             type: 'action'
           };
@@ -200,7 +200,7 @@ const ContactPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           <ArrowLeft size={16} />
           <span>Voltar</span>
         </button>
-        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Fale Conosco • UNDD Academy</span>
+        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Fale Conosco • UN2D Academy</span>
       </div>
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-10 sm:py-14 md:py-16">
@@ -210,7 +210,7 @@ const ContactPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           </span>
           <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white mb-4">
             Entre em Contato com a <br />
-            <span className="text-[#3B82F6]">UNDD Academy</span>
+            <span className="text-[#3B82F6]">UN2D Academy</span>
           </h1>
           <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed">
             Tire dúvidas pedagógicas, solicite informações sobre parcerias corporativas ou converse diretamente com a nossa coordenação acadêmica.
@@ -258,7 +258,7 @@ const ContactPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
                   <Bot size={22} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm tracking-wide text-white">Atendimento UNDD Academy</h3>
+                  <h3 className="font-bold text-sm tracking-wide text-white">Atendimento UN2D Academy</h3>
                   <div className="flex items-center gap-1.5 text-[11px] text-emerald-400">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                     <span>Secretaria Acadêmica Online</span>
@@ -325,7 +325,7 @@ const ContactPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
               {isTyping && (
                 <div className="flex items-center gap-2 text-xs text-gray-400 italic">
                   <Loader2 size={14} className="animate-spin text-blue-400" />
-                  <span>A equipe UNDD Academy está digitando...</span>
+                  <span>A equipe UN2D Academy está digitando...</span>
                 </div>
               )}
             </div>

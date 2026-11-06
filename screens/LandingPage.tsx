@@ -47,28 +47,35 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter, onSelectCourse }) =>
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [currentView]);
 
-  // Slides matching Screenshot 7 and institutional mission
+  // Slides com os novos cursos em destaque e missão UN2D
   const slides = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1920&auto=format&fit=crop',
-      categoryTag: 'MEIO AMBIENTE',
-      title: 'SUSTENTABILIDADE',
-      subtitle: 'Entenda o impacto ambiental e aprenda práticas de ESG que as grandes empresas valorizam hoje.',
+      image: '/assets/aistudio/IMG-20261105-WA0103_62381079.jpg',
+      categoryTag: 'DESTAQUE • FILOSOFIA & CULTURA',
+      title: 'PÉROLAS DO PROFº OLAVO DE CARVALHO',
+      subtitle: 'Grandes lições, diagnóstico cultural e a busca intransigente da verdade e da liberdade individual.',
     },
     {
       id: 2,
+      image: '/assets/aistudio/IMG-20261105-WA0105_742318b3.jpg',
+      categoryTag: 'DESTAQUE • FORMAÇÃO POLÍTICA',
+      title: 'NEO MARXISMO',
+      subtitle: 'Origens, estratégias hegemônicas, Escola de Frankfurt e a guerra cultural nas instituições modernas.',
+    },
+    {
+      id: 3,
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1920&auto=format&fit=crop',
       categoryTag: 'TECNOLOGIA & INDÚSTRIA',
       title: 'INDÚSTRIA 4.0 & AUTOMAÇÃO',
       subtitle: 'Capacitação prática em sistemas inteligentes, robótica e processos digitais modernos.',
     },
     {
-      id: 3,
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1920&auto=format&fit=crop',
-      categoryTag: 'EDUCAÇÃO & ÉTICA',
-      title: 'FORMAÇÃO LIVRE DE VIÉS',
-      subtitle: 'Conhecimento técnico, ético e emancipador focado no mérito e no protagonismo individual.',
+      id: 4,
+      image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1920&auto=format&fit=crop',
+      categoryTag: 'MEIO AMBIENTE & ESG',
+      title: 'SUSTENTABILIDADE & PRÁTICAS ESG',
+      subtitle: 'Entenda o impacto ambiental e aprenda práticas de ESG que as grandes empresas valorizam hoje.',
     }
   ];
 
@@ -228,14 +235,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter, onSelectCourse }) =>
         </div>
       </section>
 
-      {/* --- PILARES INSTITUCIONAIS UNDD --- */}
+      {/* --- PILARES INSTITUCIONAIS UN2D --- */}
       <section className="py-16 px-6 md:px-14 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="text-xs font-black uppercase tracking-[0.25em] text-[#F59E0B] block mb-2">
             Compromisso com o Ensino de Verdade
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-white">
-            Por que a UNDD Academy é diferente?
+            Por que a UN2D Academy é diferente?
           </h2>
           <p className="text-gray-300 text-sm sm:text-base mt-3 leading-relaxed">
             Ambiente completo de capacitação profissional para jovens e adultos, desenhado para as reais exigências do mercado e fundamentado em valores perenes.
@@ -284,7 +291,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter, onSelectCourse }) =>
               Assista quando e onde quiser.
             </h2>
             <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl">
-              No celular, tablet, Smart TV ou notebook. A UNDD Academy acompanha o seu ritmo de aprendizado, com progresso sincronizado em todos os dispositivos.
+              No celular, tablet, Smart TV ou notebook. A UN2D Academy acompanha o seu ritmo de aprendizado, com progresso sincronizado em todos os dispositivos.
             </p>
 
             {/* 4 Ícones conforme Screenshot 2 */}
@@ -321,7 +328,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter, onSelectCourse }) =>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#1B2F5C] max-w-xl w-full">
               <img 
                 src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?q=80&w=900&auto=format&fit=crop" 
-                alt="Acesse a UNDD Academy de qualquer dispositivo" 
+                alt="Acesse a UN2D Academy de qualquer dispositivo" 
                 className="w-full h-auto object-cover rounded-3xl" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#060B18]/60 via-transparent to-transparent pointer-events-none" />
@@ -395,12 +402,12 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter, onSelectCourse }) =>
         <div className="space-y-4">
           {[
             { 
-              q: 'O que é a UNDD Academy?', 
-              a: 'A UNDD Academy é a plataforma oficial de ensino da União Nacional de Docentes de Direita. Um ambiente virtual completo de capacitação profissional para jovens e adultos, com foco no ensino livre de viés ideológico, no mérito e nas reais exigências do mercado de trabalho.' 
+              q: 'O que é a UN2D Academy?', 
+              a: 'A UN2D Academy é a plataforma oficial de ensino da União Nacional de Docentes de Direita. Um ambiente virtual completo de capacitação profissional para jovens e adultos, com foco no ensino livre de viés ideológico, no mérito e nas reais exigências do mercado de trabalho.' 
             },
             { 
               q: 'Os cursos possuem certificado reconhecido?', 
-              a: 'Sim! Todos os cursos concluídos com aproveitamento emitem certificados digitais oficiais emitidos pela UNDD Academy, com autenticação para comprovação de horas complementares e qualificação profissional.' 
+              a: 'Sim! Todos os cursos concluídos com aproveitamento emitem certificados digitais oficiais emitidos pela UN2D Academy, com autenticação para comprovação de horas complementares e qualificação profissional.' 
             },
             { 
               q: 'Posso assistir às aulas offline?', 

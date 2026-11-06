@@ -48,7 +48,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ course, onClose, o
               Acesso Liberado com Sucesso!
             </h2>
             <p className="text-xs sm:text-sm text-gray-300 max-w-md mx-auto leading-relaxed">
-              Seu acesso ao curso <strong className="text-white">{course.title}</strong> foi ativado na UNDD Academy.
+              Seu acesso ao curso <strong className="text-white">{course.title}</strong> foi ativado na UN2D Academy.
             </p>
           </div>
 
@@ -95,7 +95,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ course, onClose, o
               </h2>
               <p className="text-[11px] text-gray-400 flex items-center gap-1.5">
                 <ShieldCheck size={13} className="text-emerald-400" />
-                Criptografia SSL 256 bits • UNDD Academy Brasil
+                Criptografia SSL 256 bits • UN2D Academy Brasil
               </p>
             </div>
           </div>
@@ -264,7 +264,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ course, onClose, o
             </button>
 
             <p className="text-[10px] text-gray-400 text-center">
-              Ao confirmar, você declara concordar com as diretrizes e termos de uso da UNDD Academy.
+              Ao confirmar, você declara concordar com as diretrizes e termos de uso da UN2D Academy.
             </p>
 
           </div>

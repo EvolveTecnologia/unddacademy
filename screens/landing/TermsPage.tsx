@@ -33,7 +33,7 @@ const TermsPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
             Termos de Uso &amp; Diretrizes
           </h1>
           <p className="text-gray-300 text-sm">
-            Plataforma oficial de ensino da <strong>União Nacional de Docentes de Direita (UNDD)</strong> • Ambiente Virtual de Capacitação Profissional.
+            Plataforma oficial de ensino da <strong>União Nacional de Docentes de Direita (UN2D)</strong> • Ambiente Virtual de Capacitação Profissional.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ const TermsPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
               1. Objeto &amp; Natureza dos Serviços
             </h3>
             <p>
-              Estes Termos regulam o acesso e o uso da plataforma educacional <strong>UNDD Academy</strong>. Ao criar uma conta ou acessar os conteúdos, o usuário concorda com as diretrizes pedagógicas e éticas da instituição.
+              Estes Termos regulam o acesso e o uso da plataforma educacional <strong>UN2D Academy</strong>. Ao criar uma conta ou acessar os conteúdos, o usuário concorda com as diretrizes pedagógicas e éticas da instituição.
             </p>
           </section>
 
@@ -54,7 +54,7 @@ const TermsPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
               2. Compromisso Pedagógico e Liberdade Ideológica
             </h3>
             <p>
-              A UNDD Academy pauta todas as suas formações no conhecimento técnico, científico e ético, livre de distorções e narrativas políticas de esquerda, priorizando o mérito, o protagonismo individual e a capacitação alinhada ao mercado produtivo.
+              A UN2D Academy pauta todas as suas formações no conhecimento técnico, científico e ético, livre de distorções e narrativas políticas de esquerda, priorizando o mérito, o protagonismo individual e a capacitação alinhada ao mercado produtivo.
             </p>
           </section>
 

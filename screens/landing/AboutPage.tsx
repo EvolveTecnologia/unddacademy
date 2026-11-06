@@ -21,7 +21,7 @@ const AboutPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           <ArrowLeft size={16} />
           <span>Voltar</span>
         </button>
-        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Quem Somos • UNDD Academy</span>
+        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Quem Somos • UN2D Academy</span>
       </div>
 
       {/* Hero Section */}
@@ -42,7 +42,7 @@ const AboutPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           </h1>
           
           <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            A <strong>UNDD Academy</strong> é a plataforma oficial de ensino da União Nacional de Docentes de Direita, um ambiente virtual completo de capacitação profissional para jovens e adultos, acessível via mobile, tablet e desktop.
+            A <strong>UN2D Academy</strong> é a plataforma oficial de ensino da União Nacional de Docentes de Direita, um ambiente virtual completo de capacitação profissional para jovens e adultos, acessível via mobile, tablet e desktop.
           </p>
         </div>
       </section>
@@ -62,7 +62,7 @@ const AboutPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
                 Desenvolvida para preparar o aluno para as reais exigências do mercado de trabalho, a plataforma reúne cursos online em diversas áreas, lives interativas e atividades práticas com foco no desenvolvimento contínuo e na excelência técnica.
               </p>
               <p>
-                Fundamentada no compromisso com o ensino livre de viés ideológico de esquerda, a UNDD Academy busca libertar as novas gerações de narrativas e distorções políticas, oferecendo um conhecimento técnico, ético e emancipador que prioriza o mérito, o protagonismo individual e o crescimento profissional sustentável.
+                Fundamentada no compromisso com o ensino livre de viés ideológico de esquerda, a UN2D Academy busca libertar as novas gerações de narrativas e distorções políticas, oferecendo um conhecimento técnico, ético e emancipador que prioriza o mérito, o protagonismo individual e o crescimento profissional sustentável.
               </p>
             </div>
           </div>

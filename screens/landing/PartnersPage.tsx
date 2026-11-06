@@ -21,7 +21,7 @@ const PartnersPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           <ArrowLeft size={16} />
           <span>Voltar</span>
         </button>
-        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Parcerias • UNDD Academy</span>
+        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Parcerias • UN2D Academy</span>
       </div>
 
       {/* Hero Section */}
@@ -38,7 +38,7 @@ const PartnersPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           </h1>
           
           <p className="text-sm md:text-base text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            A <strong>UNDD Academy</strong> colabora diretamente com empresas, indústrias, cooperativas e instituições em todo o Brasil para construir programas de capacitação técnica com foco no mérito, na produtividade e em resultados concretos.
+            A <strong>UN2D Academy</strong> colabora diretamente com empresas, indústrias, cooperativas e instituições em todo o Brasil para construir programas de capacitação técnica com foco no mérito, na produtividade e em resultados concretos.
           </p>
 
           <div className="pt-4">
@@ -80,7 +80,7 @@ const PartnersPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
             <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
               <GraduationCap size={26} />
             </div>
-            <h3 className="font-bold text-lg text-white">Docentes da UNDD</h3>
+            <h3 className="font-bold text-lg text-white">Docentes da UN2D</h3>
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
               Professores e especialistas de todo o Brasil unindo esforços para ministrar cursos técnicos e acadêmicos livres de narrativas ideológicas partidárias.
             </p>

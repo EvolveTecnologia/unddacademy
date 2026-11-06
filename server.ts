@@ -244,7 +244,7 @@ Règles de comportement :
   return res.json({
     text: fallbackPedagogicalResponse,
     modelUsed: "undd-tutor-offline-resilient",
-    modelLabel: "Tutor Acadêmico UNDD Academy (Modo Resiliente)",
+    modelLabel: "Tutor Acadêmico UN2D Academy (Modo Resiliente)",
     isFallback: true,
     note: "Resposta gerada via tutor pedagógico integrado para garantir a continuidade ininterrupta de seus estudos.",
     fallbackChain: fallbackChainAttempted,
@@ -257,7 +257,7 @@ function generateLocalPedagogicalFallback(query: string, courseContext?: any): s
   const courseTitle = courseContext?.title ? `no curso **${courseContext.title}**` : "em seus estudos";
 
   if (q.includes("ola") || q.includes("olá") || q.includes("bom dia") || q.includes("boa tarde") || q.includes("oi")) {
-    return `### Olá! Boas-vindas ao ambiente de aprendizagem UNDD Academy
+    return `### Olá! Boas-vindas ao ambiente de aprendizagem UN2D Academy
 
 Sou seu tutor acadêmico inteligente. Como posso apoiar seu desenvolvimento profissional hoje ${courseTitle}?
 
@@ -269,7 +269,7 @@ Você pode me solicitar:
   }
 
   if (q.includes("quiz") || q.includes("prova") || q.includes("avalia") || q.includes("certificad") || q.includes("teste")) {
-    return `### Método de Revisão & Preparação Técnica UNDD Academy
+    return `### Método de Revisão & Preparação Técnica UN2D Academy
 
 Para garantir sua excelência nas avaliações ${courseTitle}:
 1. **Identifique os conceitos fundamentais**: revise as definições técnicas e metodologias práticas de cada módulo.
@@ -290,11 +290,11 @@ Para garantir sua excelência nas avaliações ${courseTitle}:
 *Você pode solicitar o detalhamento de qualquer lição específica.*`;
   }
 
-  return `### Análise Pedagógica UNDD Academy
+  return `### Análise Pedagógica UN2D Academy
 
 Sobre o seu questionamento **"${query}"** ${courseTitle}:
 
-1. **Fundamentação técnica**: Na UNDD Academy, o domínio de cada competência articula teoria rigorosa e prática aplicada.
+1. **Fundamentação técnica**: Na UN2D Academy, o domínio de cada competência articula teoria rigorosa e prática aplicada.
 2. **Orientação de estudo**: Sugerimos revisar as videoaulas do módulo correspondente e consultar as apostilas na Biblioteca Técnica.
 3. **Aplicação no mercado**: Avalie sempre o impacto e o ganho de eficiência no seu dia a dia profissional.
 
@@ -394,7 +394,7 @@ async function startServer() {
       const ogSquareUrl = `${baseUrl}/og-square.jpg`;
       const appUrl = `${baseUrl}${req.originalUrl || "/"}`;
 
-      const title = "UNDD Academy - Plataforma Oficial de Ensino";
+      const title = "UN2D Academy - Plataforma Oficial de Ensino";
       const description = "Ambiente virtual completo de capacitação profissional para jovens e adultos da União Nacional de Docentes de Direita, livre de viés ideológico e focado no mérito e protagonismo individual.";
 
       const socialHtml = `<!DOCTYPE html>
@@ -406,7 +406,7 @@ async function startServer() {
 
   <!-- Open Graph / WhatsApp / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="UNDD Academy">
+  <meta property="og:site_name" content="UN2D Academy">
   <meta property="og:url" content="${appUrl}">
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${description}">
@@ -417,7 +417,7 @@ async function startServer() {
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="UNDD Academy - Plataforma Oficial de Ensino">
+  <meta property="og:image:alt" content="UN2D Academy - Plataforma Oficial de Ensino">
 
   <!-- Secondary PNG fallback -->
   <meta property="og:image" content="${ogPngUrl}">
@@ -432,7 +432,7 @@ async function startServer() {
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="800">
   <meta property="og:image:height" content="800">
-  <meta property="og:image:alt" content="Logo UNDD Academy Oficial">
+  <meta property="og:image:alt" content="Logo UN2D Academy Oficial">
 
   <link rel="image_src" href="${ogJpgUrl}">
 
@@ -443,18 +443,18 @@ async function startServer() {
   <meta name="twitter:title" content="${title}">
   <meta name="twitter:description" content="${description}">
   <meta name="twitter:image" content="${ogJpgUrl}">
-  <meta name="twitter:image:alt" content="UNDD Academy - Plataforma Oficial de Ensino">
+  <meta name="twitter:image:alt" content="UN2D Academy - Plataforma Oficial de Ensino">
 
   <link rel="icon" type="image/png" sizes="32x32" href="${baseUrl}/favicon-32x32.png">
   <link rel="apple-touch-icon" href="${baseUrl}/apple-touch-icon.png">
 </head>
 <body style="background:#060B18;color:#ffffff;font-family:sans-serif;padding:30px;text-align:center;">
   <div style="max-width:600px;margin:0 auto;">
-    <h1 style="color:#ffffff;margin-bottom:10px;">UNDD ACADEMY</h1>
+    <h1 style="color:#ffffff;margin-bottom:10px;">UN2D ACADEMY</h1>
     <p style="color:#94a3b8;font-size:15px;line-height:1.5;">${description}</p>
-    <img src="${ogJpgUrl}" alt="UNDD Academy Preview" style="max-width:100%;height:auto;border-radius:12px;margin:20px 0;box-shadow:0 10px 25px rgba(0,0,0,0.5);">
+    <img src="${ogJpgUrl}" alt="UN2D Academy Preview" style="max-width:100%;height:auto;border-radius:12px;margin:20px 0;box-shadow:0 10px 25px rgba(0,0,0,0.5);">
     <div>
-      <a href="${appUrl}" style="display:inline-block;background:#1E40AF;color:#ffffff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;">Acessar Plataforma UNDD Academy</a>
+      <a href="${appUrl}" style="display:inline-block;background:#1E40AF;color:#ffffff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;">Acessar Plataforma UN2D Academy</a>
     </div>
   </div>
 </body>
@@ -482,7 +482,7 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`UNDD Academy Server running on http://0.0.0.0:${PORT}`);
+    console.log(`UN2D Academy Server running on http://0.0.0.0:${PORT}`);
   });
 }
 

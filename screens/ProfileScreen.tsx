@@ -25,8 +25,8 @@ const DEFAULT_USER: UserProfile = {
   cpf: '458.912.308-20',
   avatar: '/perfil.jpg',
   level: 8,
-  badges: ['Certificado UNDD', 'Membro Ativo'],
-  plan: 'Acesso Completo UNDD Academy',
+  badges: ['Certificado UN2D', 'Membro Ativo'],
+  plan: 'Acesso Completo UN2D Academy',
   phone: '(11) 98765-4321',
   title: 'Profissional de Tecnologia e Gestão',
   bio: 'Estudante dedicado ao desenvolvimento técnico, liderança ética e aperfeiçoamento profissional contínuo.',
@@ -140,7 +140,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onLogout }) => {
           {title}
         </h2>
         <span className="text-[10px] text-[#3B82F6] font-semibold block truncate">
-          Espaço do Aluno • UNDD Academy
+          Espaço do Aluno • UN2D Academy
         </span>
       </div>
     </div>
@@ -210,7 +210,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onLogout }) => {
             {user.plan}
           </p>
           <span className="inline-block mt-1.5 px-3 py-0.5 rounded-full bg-[#1E40AF]/30 border border-[#3B82F6]/40 text-[10px] font-semibold text-gray-300">
-            Nível {user.level} • Aluno Oficial UNDD
+            Nível {user.level} • Aluno Oficial UN2D
           </span>
         </div>
 

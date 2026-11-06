@@ -48,7 +48,7 @@ const PdfViewerScreen: React.FC<PdfViewerScreenProps> = ({ material, isDownloade
           </button>
           <div className="flex flex-col overflow-hidden">
             <h1 className="text-xs md:text-sm font-bold text-white truncate pr-4 leading-none mb-1">{material.title}</h1>
-            <span className="text-[9px] text-blue-400 font-bold uppercase tracking-wider">Leitura e Estudo • UNDD Academy</span>
+            <span className="text-[9px] text-blue-400 font-bold uppercase tracking-wider">Leitura e Estudo • UN2D Academy</span>
           </div>
         </div>
         
@@ -107,7 +107,7 @@ const PdfViewerScreen: React.FC<PdfViewerScreenProps> = ({ material, isDownloade
         <div className="bg-[#10B981] p-2 text-center">
           <p className="text-[10px] text-black font-extrabold uppercase tracking-wider flex items-center justify-center gap-2">
             <CheckCircle size={12} />
-            Disponível offline nos seus downloads da UNDD Academy
+            Disponível offline nos seus downloads da UN2D Academy
           </p>
         </div>
       )}

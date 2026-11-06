@@ -53,7 +53,7 @@ export const SupportScreen: React.FC = () => {
         priority: 'Alta',
         status: 'Em andamento',
         date: '02/02/2026',
-        description: 'Solicitação de emissão de declaração com validação digital e assinatura institucional da UNDD.'
+        description: 'Solicitação de emissão de declaração com validação digital e assinatura institucional da UN2D.'
       }
     ];
   });
@@ -70,7 +70,7 @@ export const SupportScreen: React.FC = () => {
     {
       id: 1,
       type: 'bot',
-      text: 'Olá! Bem-vindo à Central de Atendimento da UNDD Academy. Como podemos orientar sua jornada de estudos hoje?',
+      text: 'Olá! Bem-vindo à Central de Atendimento da UN2D Academy. Como podemos orientar sua jornada de estudos hoje?',
       options: [
         'Como emitir meu certificado?',
         'Problemas com reprodução ou downloads',
@@ -188,14 +188,14 @@ export const SupportScreen: React.FC = () => {
     },
     {
       q: 'Como funciona o acesso às aulas no celular e no computador?',
-      a: 'A UNDD Academy funciona com layout adaptativo sincronizado em tempo real. No computador os cursos são organizados em formato widescreen horizontal e no celular/tablet em formato vertical ergonômico.'
+      a: 'A UN2D Academy funciona com layout adaptativo sincronizado em tempo real. No computador os cursos são organizados em formato widescreen horizontal e no celular/tablet em formato vertical ergonômico.'
     },
     {
       q: 'Posso baixar apostilas para estudar sem internet?',
       a: 'Sim. Todas as apostilas em PDF e materiais de apoio podem ser salvos no seu dispositivo pela aba "Download" para leitura offline.'
     },
     {
-      q: 'Como tirar dúvidas diretamente com os docentes da UNDD?',
+      q: 'Como tirar dúvidas diretamente com os docentes da UN2D?',
       a: 'No menu "Acadêmico", acesse a aba "Mensagens com Docentes" para enviar suas dúvidas diretamente ao professor responsável pelo curso selecionado.'
     }
   ];
@@ -245,7 +245,7 @@ export const SupportScreen: React.FC = () => {
           </div>
           <div className="min-w-0">
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Sede Institucional</span>
-            <p className="text-white text-xs font-bold truncate">UNDD Brasil • Brasília / SP</p>
+            <p className="text-white text-xs font-bold truncate">UN2D Brasil • Brasília / SP</p>
             <span className="text-[10px] text-gray-400">União Nacional de Docentes de Direita</span>
           </div>
         </div>
@@ -377,7 +377,7 @@ export const SupportScreen: React.FC = () => {
                 U
               </div>
               <div>
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider">Atendente Virtual UNDD Academy</h3>
+                <h3 className="text-xs font-bold text-white uppercase tracking-wider">Atendente Virtual UN2D Academy</h3>
                 <span className="text-[10px] text-emerald-400 flex items-center gap-1 font-semibold">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Em Linha • Atendimento Oficial
                 </span>
@@ -539,7 +539,7 @@ export const SupportScreen: React.FC = () => {
                   rows={4}
                   value={newDescription}
                   onChange={e => setNewDescription(e.target.value)}
-                  placeholder="Descreva com detalhes sua solicitação para a equipe da UNDD Academy..."
+                  placeholder="Descreva com detalhes sua solicitação para a equipe da UN2D Academy..."
                   className="w-full bg-[#060B18] border border-[#1B2F5C] rounded-xl p-3.5 text-xs text-white outline-none focus:border-blue-500 resize-none leading-relaxed"
                 />
               </div>

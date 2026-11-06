@@ -179,7 +179,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onLogin, onBack }) => {
         <h1 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight leading-none">
           Criar Conta
         </h1>
-        <p className="text-[11px] text-gray-300">Comece sua jornada profissional na UNDD Academy</p>
+        <p className="text-[11px] text-gray-300">Comece sua jornada profissional na UN2D Academy</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-3">
@@ -346,7 +346,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onLogin, onBack }) => {
     <div className="h-full flex flex-col justify-between text-xs space-y-4 text-gray-300">
       <h2 className="text-base font-bold text-white uppercase border-b border-[#1B2F5C] pb-2">Termos de Uso</h2>
       <div className="flex-1 overflow-y-auto space-y-3 pr-2 text-justify">
-        <p>A utilização da plataforma UNDD Academy implica na aceitação das presentes diretrizes de integridade, dedicação aos estudos e conformidade com as leis brasileiras.</p>
+        <p>A utilização da plataforma UN2D Academy implica na aceitação das presentes diretrizes de integridade, dedicação aos estudos e conformidade com as leis brasileiras.</p>
         <p>O acesso às videoaulas, materiais e certificados é intransferível e individual.</p>
       </div>
       <button 
@@ -363,7 +363,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onLogin, onBack }) => {
     <div className="h-full flex flex-col justify-between text-xs space-y-4 text-gray-300">
       <h2 className="text-base font-bold text-white uppercase border-b border-[#1B2F5C] pb-2">Privacidade de Dados</h2>
       <div className="flex-1 overflow-y-auto space-y-3 pr-2 text-justify">
-        <p>A UNDD Academy preza pela segurança e confidencialidade dos dados dos alunos, em estrita observância à Lei Geral de Proteção de Dados (LGPD).</p>
+        <p>A UN2D Academy preza pela segurança e confidencialidade dos dados dos alunos, em estrita observância à Lei Geral de Proteção de Dados (LGPD).</p>
         <p>Suas informações são utilizadas exclusivamente para a emissão de certificados e aperfeiçoamento da experiência de aprendizagem.</p>
       </div>
       <button 
@@ -413,7 +413,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onLogin, onBack }) => {
         {mode !== 'terms' && mode !== 'privacy' && (
           <div className="text-center pt-1">
             <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-              União Nacional de Docentes de Direita • UNDD
+              União Nacional de Docentes de Direita • UN2D
             </p>
           </div>
         )}

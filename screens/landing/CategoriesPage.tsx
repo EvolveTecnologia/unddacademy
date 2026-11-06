@@ -32,7 +32,7 @@ const CategoriesPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           <ArrowLeft size={16} />
           <span>Voltar</span>
         </button>
-        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Áreas de Formação • UNDD Academy</span>
+        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Áreas de Formação • UN2D Academy</span>
       </div>
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
@@ -45,7 +45,7 @@ const CategoriesPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
             <span className="text-[#3B82F6]">Técnica e Profissional</span>
           </h1>
           <p className="text-sm md:text-base text-gray-300 max-w-3xl leading-relaxed">
-            A <strong>UNDD Academy</strong> estrutura seus cursos em áreas estratégicas para o mercado de trabalho, com foco em habilidades práticas, ética profissional e desenvolvimento contínuo.
+            A <strong>UN2D Academy</strong> estrutura seus cursos em áreas estratégicas para o mercado de trabalho, com foco em habilidades práticas, ética profissional e desenvolvimento contínuo.
           </p>
         </div>
 

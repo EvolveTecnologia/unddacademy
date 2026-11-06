@@ -112,8 +112,8 @@ export function usePWAInstall() {
       if (typeof navigator.share === 'function') {
         try {
           await navigator.share({
-            title: 'UNDD Academy - App Oficial',
-            text: 'Adicione a UNDD Academy à sua tela de início para acesso rápido e estudos offline',
+            title: 'UN2D Academy - App Oficial',
+            text: 'Adicione a UN2D Academy à sua tela de início para acesso rápido e estudos offline',
             url: window.location.origin,
           });
           return { success: true, mode: 'ios-share' };

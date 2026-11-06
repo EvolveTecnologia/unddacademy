@@ -24,8 +24,8 @@ export const CertificateViewerModal: React.FC<CertificateViewerModalProps> = ({
     if (navigator.share) {
       try {
         await navigator.share({
-          title: `Certificado UNDD Academy - ${certificate.title}`,
-          text: `Confira meu certificado oficial "${certificate.title}" emitido pela UNDD Academy e União Nacional de Docentes de Direita.`,
+          title: `Certificado UN2D Academy - ${certificate.title}`,
+          text: `Confira meu certificado oficial "${certificate.title}" emitido pela UN2D Academy e União Nacional de Docentes de Direita.`,
           url: window.location.href,
         });
       } catch (e) {
@@ -34,7 +34,7 @@ export const CertificateViewerModal: React.FC<CertificateViewerModalProps> = ({
     }
   };
 
-  const certHash = `UNDD-BR-${certificate.id.padStart(4, '0')}-${btoa(certificate.title).substring(0, 8).toUpperCase()}`;
+  const certHash = `UN2D-BR-${certificate.id.padStart(4, '0')}-${btoa(certificate.title).substring(0, 8).toUpperCase()}`;
 
   return (
     <div className="fixed inset-0 z-[250] flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto hide-scrollbar">
@@ -53,7 +53,7 @@ export const CertificateViewerModal: React.FC<CertificateViewerModalProps> = ({
               <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
                 Certificado Digital Oficial
               </h3>
-              <p className="text-[10px] text-gray-400">União Nacional de Docentes de Direita • UNDD Academy</p>
+              <p className="text-[10px] text-gray-400">União Nacional de Docentes de Direita • UN2D Academy</p>
             </div>
           </div>
           <button
@@ -76,7 +76,7 @@ export const CertificateViewerModal: React.FC<CertificateViewerModalProps> = ({
                   <Logo variant="icon-only" className="w-full h-full" />
                 </div>
                 <div className="text-left">
-                  <span className="block text-[12px] font-black tracking-widest text-white uppercase">UNDD ACADEMY</span>
+                  <span className="block text-[12px] font-black tracking-widest text-white uppercase">UN2D ACADEMY</span>
                   <span className="block text-[9px] text-[#3B82F6] font-semibold uppercase">União Nacional de Docentes de Direita</span>
                 </div>
               </div>
@@ -131,7 +131,7 @@ export const CertificateViewerModal: React.FC<CertificateViewerModalProps> = ({
               </div>
               <div className="col-span-2 sm:col-span-1 flex items-center justify-end sm:justify-center gap-2">
                 <ShieldCheck size={20} className="text-[#F59E0B]" />
-                <span className="text-[9px] text-gray-300">Assinatura Oficial UNDD</span>
+                <span className="text-[9px] text-gray-300">Assinatura Oficial UN2D</span>
               </div>
             </div>
           </div>

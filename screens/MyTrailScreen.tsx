@@ -130,7 +130,7 @@ const MyTrailScreen: React.FC = () => {
       { id: '3', title: `Técnicas Avançadas e Ferramentas de Produção`, type: 'video', status: 'completed', xp: 600 },
       { id: '4', title: `Projeto Real para o Mercado: ${selectedCourse.title}`, type: 'project', status: 'current', xp: 1000 },
       { id: '5', title: `Gestão de Eficiência, Mérito e Resultados`, type: 'video', status: 'locked', xp: 500 },
-      { id: '6', title: `Avaliação Final e Certificação Oficial UNDD`, type: 'quiz', status: 'locked', xp: 850 },
+      { id: '6', title: `Avaliação Final e Certificação Oficial UN2D`, type: 'quiz', status: 'locked', xp: 850 },
     ];
   }, [selectedCourse]);
 
@@ -207,7 +207,7 @@ const MyTrailScreen: React.FC = () => {
       {
         id: 2,
         senderId: 'coord',
-        senderName: 'Coordenação Acadêmica UNDD',
+        senderName: 'Coordenação Acadêmica UN2D',
         senderRole: 'Coordenação',
         avatar: '',
         text: `Seu progresso em "${selectedCourse.title}" está registrado em ${selectedCourse.progress}%. Mantenha o ritmo para liberar seu certificado digital oficial com selo de autenticidade.`,
@@ -223,7 +223,7 @@ const MyTrailScreen: React.FC = () => {
     const newMessage: Message = {
       id: Date.now(),
       senderId: 'me',
-      senderName: 'Aluno UNDD',
+      senderName: 'Aluno UN2D',
       senderRole: 'Eu',
       avatar: '/perfil.jpg',
       text: newMessageText,
@@ -279,7 +279,7 @@ const MyTrailScreen: React.FC = () => {
               </span>
             </div>
             <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white">
-              Ambiente Acadêmico UNDD
+              Ambiente Acadêmico UN2D
             </h1>
             <p className="text-xs md:text-sm text-gray-300 max-w-2xl mt-1 leading-relaxed">
               Acompanhe sua evolução formativa, aulas práticas, entregas de projetos e interações pedagógicas com docentes comprometidos com a excelência.
@@ -666,7 +666,7 @@ const MyTrailScreen: React.FC = () => {
                       </div>
                       <div className="min-w-0">
                         <h4 className="text-white font-bold text-xs md:text-sm truncate">{item.title}</h4>
-                        <p className="text-[10px] text-gray-400 uppercase font-bold">{item.type} • UNDD Academy</p>
+                        <p className="text-[10px] text-gray-400 uppercase font-bold">{item.type} • UN2D Academy</p>
                       </div>
                     </div>
                     <Download size={18} className="text-gray-400 group-hover:text-white transition-colors shrink-0 ml-2" />
@@ -724,10 +724,10 @@ const MyTrailScreen: React.FC = () => {
             </div>
           </div>
 
-          {/* Banner de Missão Institucional UNDD */}
+          {/* Banner de Missão Institucional UN2D */}
           <div className="bg-gradient-to-br from-[#1E40AF]/40 via-[#0C162E] to-[#10B981]/20 p-5 rounded-2xl border border-[#1B2F5C] space-y-2">
             <span className="text-[10px] font-black uppercase tracking-wider text-[#F59E0B]">
-              Compromisso UNDD
+              Compromisso UN2D
             </span>
             <h4 className="text-xs font-bold text-white leading-relaxed">
               "Ensino técnico, ético e emancipador: foco no mérito, no protagonismo individual e nas reais exigências do mercado."

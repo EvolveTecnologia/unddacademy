@@ -136,7 +136,7 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({
               {course.category}
             </span>
             <span className="px-3 py-1 rounded-md bg-[#F59E0B]/20 border border-[#F59E0B]/40 text-[#F59E0B] text-[10px] sm:text-xs font-black uppercase tracking-wider">
-              Certificação UNDD Academy
+              Certificação UN2D Academy
             </span>
           </div>
 
@@ -159,7 +159,7 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({
               <div>
                 <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">Docente Responsável</span>
                 <h3 className="text-sm font-black text-white">{course.instructor}</h3>
-                <p className="text-xs text-[#60A5FA] font-semibold">{course.instructorTitle || 'Docente Oficial UNDD'}</p>
+                <p className="text-xs text-[#60A5FA] font-semibold">{course.instructorTitle || 'Docente Oficial UN2D'}</p>
               </div>
             </div>
             <div className="flex items-center gap-4 text-xs font-bold text-gray-300">
@@ -307,7 +307,7 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({
                     </div>
                     <div className="flex-1 overflow-hidden">
                       <h4 className="text-xs font-bold text-white truncate">{material.title}</h4>
-                      <span className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">PDF Oficial • UNDD Academy</span>
+                      <span className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">PDF Oficial • UN2D Academy</span>
                     </div>
                     {isDownloaded && <CheckCircle size={18} className="text-emerald-400" />}
                   </div>
@@ -336,7 +336,7 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({
                   <RotateCcw size={30} />
                 </div>
                 <h3 className="text-base font-black uppercase mb-1 text-white">Avaliação Técnica de Conhecimentos</h3>
-                <p className="text-xs text-gray-300 mb-6 max-w-sm">Responda às questões práticas para validar sua certificação na UNDD Academy.</p>
+                <p className="text-xs text-gray-300 mb-6 max-w-sm">Responda às questões práticas para validar sua certificação na UN2D Academy.</p>
                 <button 
                   onClick={() => setQuizStarted(true)} 
                   className="w-full md:w-80 py-3.5 bg-[#1E40AF] hover:bg-[#1D4ED8] text-white rounded-xl font-bold text-xs tracking-wider uppercase shadow-xl transition-all cursor-pointer"

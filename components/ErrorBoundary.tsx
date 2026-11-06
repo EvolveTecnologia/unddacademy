@@ -50,7 +50,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
             <div className="space-y-2">
               <h2 className="text-lg font-bold text-white tracking-wide">
-                Continuidade de Serviço • UNDD Academy
+                Continuidade de Serviço • UN2D Academy
               </h2>
               <p className="text-xs text-gray-300 leading-relaxed">
                 Ocorreu uma instabilidade pontual durante a renderização do módulo. Clique no botão abaixo para restaurar sua sessão de estudos.

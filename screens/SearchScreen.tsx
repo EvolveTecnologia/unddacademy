@@ -43,7 +43,7 @@ const SearchScreen: React.FC<SearchScreenProps> = ({ onCourseClick, onCategoryCl
           <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#3B82F6] transition-colors" size={24} />
           <input 
             type="text" 
-            placeholder="O que você deseja aprender hoje na UNDD Academy?"
+            placeholder="O que você deseja aprender hoje na UN2D Academy?"
             className="w-full bg-[#0C162E] text-white py-4 md:py-5 pl-16 pr-14 rounded-2xl font-medium placeholder-gray-400 outline-none border border-[#1B2F5C] focus:border-[#3B82F6] transition-all text-base md:text-lg shadow-xl relative z-10"
             value={query}
             onChange={(e) => setQuery(e.target.value)}

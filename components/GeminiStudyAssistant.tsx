@@ -46,7 +46,7 @@ export const GeminiStudyAssistant: React.FC<GeminiStudyAssistantProps> = ({
     {
       id: 'welcome',
       role: 'assistant',
-      content: `Olá! Sou o **Tutor Acadêmico UNDD Academy**, dedicado ao apoio técnico e pedagógico para o curso **${activeCourse.title}**.\n\nEstou à sua disposição para esclarecer dúvidas sobre os módulos, aprofundar conceitos práticos para o mercado de trabalho, revisar tópicos para avaliações e orientar sua jornada de excelência e mérito profissional.\n\nComo posso ajudar você hoje com este conteúdo?`,
+      content: `Olá! Sou o **Tutor Acadêmico UN2D Academy**, dedicado ao apoio técnico e pedagógico para o curso **${activeCourse.title}**.\n\nEstou à sua disposição para esclarecer dúvidas sobre os módulos, aprofundar conceitos práticos para o mercado de trabalho, revisar tópicos para avaliações e orientar sua jornada de excelência e mérito profissional.\n\nComo posso ajudar você hoje com este conteúdo?`,
       modelUsed: 'gemini-3.8-flash',
       modelLabel: 'Gemini 3.8 Flash (Modelo de Alta Precisão)',
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
@@ -148,9 +148,9 @@ export const GeminiStudyAssistant: React.FC<GeminiStudyAssistantProps> = ({
       const fallbackMsg: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: `Sobre a sua dúvida em "${query}":\n\nNo ambiente de estudos da UNDD Academy, recomendamos consolidar a aplicação técnica com base nas diretrizes práticas da aula e na bibliografia complementar disponível na sua biblioteca.\n\n*Caso queira, detalhe um módulo ou exemplo específico para aprofundarmos juntos.*`,
+        content: `Sobre a sua dúvida em "${query}":\n\nNo ambiente de estudos da UN2D Academy, recomendamos consolidar a aplicação técnica com base nas diretrizes práticas da aula e na bibliografia complementar disponível na sua biblioteca.\n\n*Caso queira, detalhe um módulo ou exemplo específico para aprofundarmos juntos.*`,
         modelUsed: 'undd-tutor-offline-resilient',
-        modelLabel: 'Tutor UNDD Academy (Modo Offline Resiliente)',
+        modelLabel: 'Tutor UN2D Academy (Modo Offline Resiliente)',
         isFallback: true,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
@@ -168,7 +168,7 @@ export const GeminiStudyAssistant: React.FC<GeminiStudyAssistantProps> = ({
   ] : [
     `Como organizar um cronograma de estudos focado em alta produtividade?`,
     `Quais habilidades técnicas são mais valorizadas no mercado atual?`,
-    `Como funciona a emissão de certificado oficial na UNDD Academy?`,
+    `Como funciona a emissão de certificado oficial na UN2D Academy?`,
     `Dicas práticas para retenção e fixação de conteúdos técnicos.`
   ];
 
@@ -232,9 +232,9 @@ export const GeminiStudyAssistant: React.FC<GeminiStudyAssistantProps> = ({
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-sm font-black uppercase tracking-wider text-white">Tutor Acadêmico UNDD</h2>
+              <h2 className="text-sm font-black uppercase tracking-wider text-white">Tutor Acadêmico UN2D</h2>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#1E40AF]/30 text-[#60A5FA] border border-[#1B2F5C]">
-                Oficial UNDD Academy
+                Oficial UN2D Academy
               </span>
             </div>
             <p className="text-[11px] text-slate-300">
@@ -318,7 +318,7 @@ export const GeminiStudyAssistant: React.FC<GeminiStudyAssistantProps> = ({
                 {msg.role === 'assistant' && (
                   <div className="flex flex-wrap items-center justify-between gap-2 pb-2 mb-2 border-b border-[#1B2F5C] text-[10px]">
                     <span className="font-bold text-[#60A5FA] uppercase tracking-wider flex items-center gap-1.5">
-                      <Sparkles size={11} className="text-[#F59E0B]" /> Tutor Pedagógico UNDD
+                      <Sparkles size={11} className="text-[#F59E0B]" /> Tutor Pedagógico UN2D
                     </span>
                     <div className="flex items-center gap-1.5">
                       {msg.isFallback && (
@@ -415,7 +415,7 @@ export const GeminiStudyAssistant: React.FC<GeminiStudyAssistantProps> = ({
         </form>
         <div className="mt-2 flex items-center justify-between text-[10px] text-slate-400 px-1">
           <span>Ambiente virtual com suporte inteligente e continuidade técnica garantida.</span>
-          <span className="font-semibold text-[#60A5FA]">UNDD Academy</span>
+          <span className="font-semibold text-[#60A5FA]">UN2D Academy</span>
         </div>
       </div>
 
@@ -430,7 +430,7 @@ export const GeminiStudyAssistant: React.FC<GeminiStudyAssistantProps> = ({
                 </div>
                 <div>
                   <h3 className="text-base font-bold uppercase tracking-tight">Arquitetura de Processamento IA</h3>
-                  <p className="text-xs text-slate-300">Suporte Pedagógico Ininterrupto UNDD Academy</p>
+                  <p className="text-xs text-slate-300">Suporte Pedagógico Ininterrupto UN2D Academy</p>
                 </div>
               </div>
               <button

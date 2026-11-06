@@ -30,8 +30,24 @@ const HomeScreen: React.FC<HomeScreenProps> = ({
   const [currentSlide, setCurrentSlide] = useState(0);
   const touchStartX = useRef<number | null>(null);
 
-  // Hero Banners inspired directly by Screenshots (Alumínio & Meio Ambiente, Sustentabilidade ESG, EJA Fundamental)
+  // Hero Banners: Pérolas do Profº Olavo de Carvalho e Neo Marxismo em destaque
   const slides = [
+    {
+      id: 'perolas-olavo-de-carvalho',
+      categoryTag: 'DESTAQUE • FILOSOFIA & CULTURA',
+      category: Category.Educacao,
+      title: 'PÉROLAS DO PROFº OLAVO DE CARVALHO',
+      subtitle: 'Grandes lições, diagnóstico cultural e a busca intransigente da verdade e da liberdade individual.',
+      image: '/assets/aistudio/IMG-20261105-WA0103_62381079.jpg',
+    },
+    {
+      id: 'neo-marxismo',
+      categoryTag: 'DESTAQUE • FORMAÇÃO POLÍTICA',
+      category: Category.Educacao,
+      title: 'NEO MARXISMO',
+      subtitle: 'Origens, estratégias hegemônicas, Escola de Frankfurt e a guerra cultural nas instituições modernas.',
+      image: '/assets/aistudio/IMG-20261105-WA0105_742318b3.jpg',
+    },
     {
       id: SUSTENTABILIDADE_COURSES[0].id,
       categoryTag: 'SUSTENTABILIDADE',
@@ -39,22 +55,6 @@ const HomeScreen: React.FC<HomeScreenProps> = ({
       title: 'ALUMÍNIO & AMBIENTE',
       subtitle: 'Entenda o ciclo completo e a responsabilidade socioambiental.',
       image: SUSTENTABILIDADE_COURSES[0].heroImage,
-    },
-    {
-      id: SUSTENTABILIDADE_COURSES[4].id,
-      categoryTag: 'MEIO AMBIENTE & ESG',
-      category: Category.Sustentabilidade,
-      title: 'SUSTENTABILIDADE & PRÁTICAS ESG',
-      subtitle: 'Entenda o impacto ambiental e aprenda práticas de ESG que as grandes empresas valorizam hoje.',
-      image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1920&auto=format&fit=crop',
-    },
-    {
-      id: EDUCACAO_COURSES[0].id,
-      categoryTag: 'EDUCAÇÃO BÁSICA & EJA',
-      category: Category.Educacao,
-      title: 'EDUCAÇÃO DE JOVENS E ADULTO',
-      subtitle: 'Formação essencial, leitura, raciocínio lógico e preparação real para o mercado.',
-      image: EDUCACAO_COURSES[0].heroImage,
     },
     {
       id: TECNOLOGIA_COURSES[1].id,

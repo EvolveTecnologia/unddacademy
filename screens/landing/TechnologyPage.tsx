@@ -21,7 +21,7 @@ const TechnologyPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           <ArrowLeft size={16} />
           <span>Voltar</span>
         </button>
-        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Tecnologia • UNDD Academy</span>
+        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Tecnologia • UN2D Academy</span>
       </div>
       
       <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-10 sm:py-14 md:py-16">
@@ -37,7 +37,7 @@ const TechnologyPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
               <span className="text-[#3B82F6]">Multi-Dispositivo</span> &amp; Sincronizada
             </h1>
             <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed mb-6 sm:mb-8">
-              A <strong>UNDD Academy</strong> combina design moderno e engenharia de ponta: cards horizontais em tela cheia no desktop e cards verticais no mobile/tablet, com reprodutor de vídeo em alta definição e suporte a downloads offline de apostilas e videoaulas.
+              A <strong>UN2D Academy</strong> combina design moderno e engenharia de ponta: cards horizontais em tela cheia no desktop e cards verticais no mobile/tablet, com reprodutor de vídeo em alta definição e suporte a downloads offline de apostilas e videoaulas.
             </p>
             
             <div className="grid grid-cols-3 gap-4 sm:gap-6 border-t border-[#1B2F5C] pt-6 sm:pt-8">
@@ -60,7 +60,7 @@ const TechnologyPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
             <img 
               src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop" 
               className="rounded-3xl border border-[#1B2F5C] shadow-2xl w-full object-cover"
-              alt="Tecnologia UNDD Academy"
+              alt="Tecnologia UN2D Academy"
             />
             
             {/* Floating Badge */}

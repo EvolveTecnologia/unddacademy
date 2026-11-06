@@ -21,7 +21,7 @@ const PrivacyPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           <ArrowLeft size={16} />
           <span>Voltar</span>
         </button>
-        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Privacidade • UNDD Academy</span>
+        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Privacidade • UN2D Academy</span>
       </div>
 
       <div className="max-w-4xl mx-auto px-6 md:px-12 py-16">
@@ -35,7 +35,7 @@ const PrivacyPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
             <span className="text-[#3B82F6]">Nossa Prioridade</span>
           </h1>
           <p className="text-gray-300 text-sm leading-relaxed">
-            Na <strong>UNDD Academy</strong> e na <strong>União Nacional de Docentes de Direita</strong>, a transparência e a segurança de suas informações guiam cada decisão pedagógica e tecnológica.
+            Na <strong>UN2D Academy</strong> e na <strong>União Nacional de Docentes de Direita</strong>, a transparência e a segurança de suas informações guiam cada decisão pedagógica e tecnológica.
           </p>
         </div>
 

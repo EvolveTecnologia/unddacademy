@@ -5,14 +5,15 @@ import path from 'path';
 async function generateAssets() {
   const publicDir = path.resolve('public');
   const flagPath = path.join(publicDir, 'assets/aistudio/7501795_59b517b5.png');
-  const logoPath = path.join(publicDir, 'assets/aistudio/undd_b1797e20.png');
+  const logoPath = path.join(publicDir, 'assets/aistudio/un2d_710ff440.png');
   const womanPhotoPath = path.join(publicDir, 'mulher-em-laptop.jpeg');
 
   console.log('--- 1. Gerando Favicons com a Bandeira do Brasil ---');
   // Copy raw flag as flag-brasil.png
   fs.copyFileSync(flagPath, path.join(publicDir, 'flag-brasil.png'));
-  fs.copyFileSync(logoPath, path.join(publicDir, 'undd.png'));
+  fs.copyFileSync(logoPath, path.join(publicDir, 'un2d.png'));
   fs.copyFileSync(logoPath, path.join(publicDir, 'logo.png'));
+  fs.copyFileSync(logoPath, path.join(publicDir, 'undd.png'));
 
   // 1.1 Favicon 32x32
   await sharp(flagPath)
@@ -177,7 +178,7 @@ async function generateAssets() {
           Acesse via Mobile, Tablet e Desktop
         </text>
         <text x="0" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#64748B">
-          www.undd.academy • Ensino livre, técnico e emancipador
+          www.un2d.academy • Ensino livre, técnico e emancipador
         </text>
       </g>
     </svg>
@@ -259,7 +260,7 @@ async function generateAssets() {
       <!-- Bottom Tag -->
       <rect x="270" y="670" width="260" height="42" rx="21" fill="#1E40AF" />
       <text x="400" y="696" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#FFFFFF" letter-spacing="1">
-        ACESSE: UNDD.ACADEMY
+        ACESSE: UN2D.ACADEMY
       </text>
     </svg>
   `);

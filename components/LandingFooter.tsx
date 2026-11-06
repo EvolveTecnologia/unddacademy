@@ -76,7 +76,7 @@ const LandingFooter: React.FC<LandingFooterProps> = ({ onViewChange }) => {
             <Logo size="md" className="h-10" />
           </div>
           <p className="text-gray-400 text-xs leading-relaxed max-w-xs">
-            Plataforma oficial de ensino da <strong>União Nacional de Docentes de Direita (UNDD)</strong>. Ensino técnico, ético e emancipador com foco no mérito.
+            Plataforma oficial de ensino da <strong>União Nacional de Docentes de Direita (UN2D)</strong>. Ensino técnico, ético e emancipador com foco no mérito.
           </p>
           <p className="text-gray-400 text-xs pt-1">
             Feito com <span className="text-[#EF4444]">❤️</span> para a educação.
@@ -86,7 +86,7 @@ const LandingFooter: React.FC<LandingFooterProps> = ({ onViewChange }) => {
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto border-t border-[#1B2F5C] pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-[11px]">
-        <p>Copyright © 2026 UNDD Academy Inc. Todos os direitos reservados.</p>
+        <p>Copyright © 2026 UN2D Academy Inc. Todos os direitos reservados.</p>
         <button onClick={() => handleNav('privacy')} className="hover:text-white transition-colors cursor-pointer">
           Cookies &amp; Privacidade
         </button>

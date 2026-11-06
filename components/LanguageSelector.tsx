@@ -22,7 +22,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'n
           <BRFlag className="w-8 h-5 rounded shadow" />
           <div>
             <h4 className="text-xs font-bold text-white">Português Brasileiro (pt-BR)</h4>
-            <p className="text-[10px] text-gray-400">Idioma único e oficial de todas as formações da UNDD Academy</p>
+            <p className="text-[10px] text-gray-400">Idioma único e oficial de todas as formações da UN2D Academy</p>
           </div>
         </div>
         <span className="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-lg text-[10px] font-bold">

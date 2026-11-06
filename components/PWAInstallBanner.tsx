@@ -66,7 +66,7 @@ export const PWAInstallBanner: React.FC = () => {
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1.5">
                 <h4 className="text-xs font-black uppercase tracking-wide text-white truncate">
-                  Instalar UNDD Academy
+                  Instalar UN2D Academy
                 </h4>
                 <span className="text-[9px] bg-blue-600 text-white px-1.5 py-0.2 rounded-full font-bold uppercase shrink-0">
                   App

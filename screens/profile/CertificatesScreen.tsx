@@ -22,7 +22,7 @@ export const CertificatesScreen: React.FC<CertificatesScreenProps> = ({ userName
       id: '1',
       title: 'Certificado em Gestão Financeira e Empreendedorismo de Mercado',
       date: '14/01/2026',
-      code: 'UNDD-2026-GF-8941',
+      code: 'UN2D-2026-GF-8941',
       category: 'Gestão & Negócios',
       hours: 45,
       grade: 'Distinção com Louvor'
@@ -31,7 +31,7 @@ export const CertificatesScreen: React.FC<CertificatesScreenProps> = ({ userName
       id: '2',
       title: 'Fundamentos da Indústria 4.0 & Sistemas Digitais',
       date: '20/12/2025',
-      code: 'UNDD-2025-TI-5520',
+      code: 'UN2D-2025-TI-5520',
       category: 'Tecnologia & Inclusão',
       hours: 60,
       grade: 'Aproveitamento Excelente'
@@ -40,7 +40,7 @@ export const CertificatesScreen: React.FC<CertificatesScreenProps> = ({ userName
       id: '3',
       title: 'Comunicação Profissional, Ética e Redação Nota 1000',
       date: '15/11/2025',
-      code: 'UNDD-2025-ED-3108',
+      code: 'UN2D-2025-ED-3108',
       category: 'Educação Básica & EJA',
       hours: 35,
       grade: 'Aproveitamento Excelente'
@@ -49,7 +49,7 @@ export const CertificatesScreen: React.FC<CertificatesScreenProps> = ({ userName
       id: '4',
       title: 'Inglês Instrumental e Comercial para o Mercado de Trabalho',
       date: '02/10/2025',
-      code: 'UNDD-2025-ID-1204',
+      code: 'UN2D-2025-ID-1204',
       category: 'Idiomas & Comunicação',
       hours: 40,
       grade: 'Aprovado com Mérito'
@@ -117,7 +117,7 @@ export const CertificatesScreen: React.FC<CertificatesScreenProps> = ({ userName
               Meus Diplomas &amp; Certificados Digitais
             </h1>
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-              Consulte, compartilhe e baixe seus diplomas certificados pela UNDD Academy e União Nacional de Docentes de Direita. Cada documento possui chave de autenticidade pública e registro nacional.
+              Consulte, compartilhe e baixe seus diplomas certificados pela UN2D Academy e União Nacional de Docentes de Direita. Cada documento possui chave de autenticidade pública e registro nacional.
             </p>
           </div>
 
@@ -286,7 +286,7 @@ export const CertificatesScreen: React.FC<CertificatesScreenProps> = ({ userName
       <div className="p-4 sm:p-5 rounded-2xl bg-[#0C162E] border border-[#1B2F5C] flex items-center gap-3.5 text-xs text-gray-300 shadow-md">
         <ShieldCheck size={24} className="text-emerald-400 shrink-0" />
         <p className="leading-relaxed">
-          <strong className="text-white">Validação Pública &amp; Arquivamento Digital:</strong> Cada certificado emitido a {userName} é infalsificável e consultável por contratantes e instituições 24h por dia pelo portal de verificação oficial da UNDD Academy.
+          <strong className="text-white">Validação Pública &amp; Arquivamento Digital:</strong> Cada certificado emitido a {userName} é infalsificável e consultável por contratantes e instituições 24h por dia pelo portal de verificação oficial da UN2D Academy.
         </p>
       </div>
 

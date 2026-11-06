@@ -1,4 +1,4 @@
-// UNDD Academy PWA Service Worker
+// UN2D Academy PWA Service Worker
 const CACHE_NAME = 'undd-academy-cache-v1';
 const PRECACHE_ASSETS = [
   '/',

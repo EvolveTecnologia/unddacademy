@@ -90,7 +90,7 @@ export const PWAInstallModal: React.FC<PWAInstallModalProps> = ({
                 <span className="text-[9px] bg-blue-600 text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
                   Mobile &amp; Tablet
                 </span>
-                <span className="text-[10px] text-gray-300">UNDD Academy</span>
+                <span className="text-[10px] text-gray-300">UN2D Academy</span>
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@ export const PWAInstallModal: React.FC<PWAInstallModalProps> = ({
             <div className="p-5 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 text-center space-y-2 animate-in zoom-in-95">
               <CheckCircle size={32} className="mx-auto text-emerald-400" />
               <p className="text-sm font-bold text-emerald-300">Instalação concluída!</p>
-              <p className="text-xs text-gray-300">O aplicativo UNDD Academy está pronto na sua tela de início.</p>
+              <p className="text-xs text-gray-300">O aplicativo UN2D Academy está pronto na sua tela de início.</p>
             </div>
           ) : (
             <>
@@ -212,7 +212,7 @@ export const PWAInstallModal: React.FC<PWAInstallModalProps> = ({
                     </div>
                     <div className="flex items-start gap-2.5">
                       <span className="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">3</span>
-                      <p>Confirme para fixar o ícone da UNDD Academy na sua tela inicial com suporte offline.</p>
+                      <p>Confirme para fixar o ícone da UN2D Academy na sua tela inicial com suporte offline.</p>
                     </div>
                   </div>
                 </div>
@@ -277,7 +277,7 @@ export const PWAInstallModal: React.FC<PWAInstallModalProps> = ({
                 <div className="p-2 rounded-xl bg-[#060B18] border border-[#1B2F5C] flex flex-col items-center">
                   <ShieldCheck size={15} className="text-emerald-400 mb-1" />
                   <span className="text-[10px] font-bold text-white">Oficial</span>
-                  <span className="text-[8px] text-gray-400">UNDD</span>
+                  <span className="text-[8px] text-gray-400">UN2D</span>
                 </div>
               </div>
             </>

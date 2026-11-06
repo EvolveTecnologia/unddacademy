@@ -21,7 +21,7 @@ const ImpactPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           <ArrowLeft size={16} />
           <span>Voltar</span>
         </button>
-        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Impacto &amp; Missão • UNDD Academy</span>
+        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Impacto &amp; Missão • UN2D Academy</span>
       </div>
       
       <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-10 sm:py-14 md:py-16">
@@ -35,7 +35,7 @@ const ImpactPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
             <span className="text-[#3B82F6]">Protagonismo Individual</span>
           </h1>
           <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            A <strong>UNDD Academy</strong> é a plataforma oficial de ensino da <strong>União Nacional de Docentes de Direita</strong>. Desenvolvida para preparar o aluno para as reais exigências do mercado de trabalho através de um conhecimento técnico, ético e emancipador que prioriza o mérito e o crescimento sustentável.
+            A <strong>UN2D Academy</strong> é a plataforma oficial de ensino da <strong>União Nacional de Docentes de Direita</strong>. Desenvolvida para preparar o aluno para as reais exigências do mercado de trabalho através de um conhecimento técnico, ético e emancipador que prioriza o mérito e o crescimento sustentável.
           </p>
         </div>
 

@@ -18,21 +18,21 @@ const HelpCenterPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
     { icon: CreditCard, title: 'Matrícula & Planos', desc: 'Acesso completo, formas de pagamento e recibos.' },
     { icon: Video, title: 'Aulas & Downloads', desc: 'Videoaulas em 1080p, modo offline e apostilas em PDF.' },
     { icon: Building2, title: 'Soluções para Empresas', desc: 'Capacitação profissional para equipes e instituições parceiras.' },
-    { icon: HelpCircle, title: 'Suporte Pedagógico', desc: 'Dúvidas com os docentes da UNDD e secretaria acadêmica.' },
+    { icon: HelpCircle, title: 'Suporte Pedagógico', desc: 'Dúvidas com os docentes da UN2D e secretaria acadêmica.' },
   ];
 
   const faqs = [
     { 
       q: "Como obter meu certificado oficial de conclusão?", 
-      a: "Após concluir todas as aulas do curso e obter aproveitamento mínimo de 7.0 na avaliação prática, seu certificado digital oficial emitido pela UNDD é liberado automaticamente na aba Perfil com chave pública de validação." 
+      a: "Após concluir todas as aulas do curso e obter aproveitamento mínimo de 7.0 na avaliação prática, seu certificado digital oficial emitido pela UN2D é liberado automaticamente na aba Perfil com chave pública de validação." 
     },
     { 
       q: "Posso assistir às aulas e baixar apostilas sem conexão à internet?", 
       a: "Sim. A plataforma conta com recurso de downloads offline de apostilas em PDF e materiais de apoio na aba Download para estudar quando e onde quiser." 
     },
     { 
-      q: "O que diferencia a UNDD Academy de outras plataformas?", 
-      a: "A UNDD Academy é a plataforma oficial da União Nacional de Docentes de Direita, fundamentada no compromisso com o ensino livre de viés ideológico de esquerda, priorizando o conhecimento técnico, o mérito e o protagonismo individual." 
+      q: "O que diferencia a UN2D Academy de outras plataformas?", 
+      a: "A UN2D Academy é a plataforma oficial da União Nacional de Docentes de Direita, fundamentada no compromisso com o ensino livre de viés ideológico de esquerda, priorizando o conhecimento técnico, o mérito e o protagonismo individual." 
     },
     { 
       q: "Como entrar em contato com a equipe pedagógica?", 
@@ -51,7 +51,7 @@ const HelpCenterPage: React.FC<PageProps> = ({ onBack, onViewChange }) => {
           <ArrowLeft size={16} />
           <span>Voltar</span>
         </button>
-        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Central de Ajuda • UNDD Academy</span>
+        <span className="text-xs font-bold text-[#F59E0B] uppercase tracking-widest">Central de Ajuda • UN2D Academy</span>
       </div>
 
       {/* Hero Search */}

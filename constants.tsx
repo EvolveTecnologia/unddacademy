@@ -82,15 +82,117 @@ export const CATEGORIES_CONFIG: CategoryConfig[] = [
   }
 ];
 
-// --- 📘 EDUCAÇÃO ---
+// --- 📘 EDUCAÇÃO & FORMAÇÃO LIVRE ---
 export const EDUCACAO_COURSES: Course[] = [
+  {
+    id: 'perolas-olavo-de-carvalho',
+    title: 'Pérolas do Profº Olavo de Carvalho',
+    tagline: 'Filosofia, Cultura e Análise Crítica da Sociedade Contemporânea',
+    category: Category.Educacao,
+    description: 'Seleção indispensável das principais reflexões filosóficas, métodos de estudo e diagnósticos culturais do Profº Olavo de Carvalho sobre liberdade, busca da verdade, formação da personalidade e a realidade do mundo moderno.',
+    instructor: 'Profº Olavo de Carvalho',
+    instructorTitle: 'Filósofo, Escritor e Ensaísta',
+    thumbnail: '/assets/aistudio/IMG-20261105-WA0103_62381079.jpg',
+    heroImage: '/assets/aistudio/IMG-20261105-WA0103_62381079.jpg',
+    progress: 25,
+    duration: '45h',
+    modulesCount: 3,
+    materials: [
+      { id: 'mat-olavo-1', title: 'Guia de Estudos Filosóficos e Bibliografia Recomendada (PDF)', type: 'pdf', url: EDU_PDF_URL, isDownloaded: true },
+      { id: 'mat-olavo-2', title: 'Apostila Temática: Linguagem, Verdade e Consciência', type: 'pdf', url: EDU_PDF_URL, isDownloaded: false }
+    ],
+    modules: [
+      {
+        title: 'Módulo 1: Fundamentos do Pensamento e Autonomia Intelectual',
+        lessons: [
+          { 
+            id: 'olavo-aula-1', 
+            title: 'Pérolas do Profº Olavo de Carvalho - Aula Magna', 
+            duration: '45 min', 
+            completed: true, 
+            videoUrl: 'https://youtu.be/3WN1Lq6uBB8?is=zXHRpPC0nlJHaue0' 
+          },
+          { 
+            id: 'olavo-aula-2', 
+            title: 'A Formação da Personalidade e a Busca da Verdade', 
+            duration: '38 min', 
+            completed: false, 
+            videoUrl: 'https://youtu.be/3WN1Lq6uBB8?is=zXHRpPC0nlJHaue0' 
+          }
+        ]
+      },
+      {
+        title: 'Módulo 2: Cultura, Linguagem e Degradação do Discurso',
+        lessons: [
+          { 
+            id: 'olavo-aula-3', 
+            title: 'Análise do Cenário Cultural e a Resistência Moral', 
+            duration: '50 min', 
+            completed: false, 
+            videoUrl: 'https://youtu.be/3WN1Lq6uBB8?is=zXHRpPC0nlJHaue0' 
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'neo-marxismo',
+    title: 'Neo Marxismo',
+    tagline: 'Origens, Estratégias Hegemônicas e Guerra Cultural no Ocidente',
+    category: Category.Educacao,
+    description: 'Um estudo histórico e conceitual aprofundado sobre a transição do marxismo econômico para o neo-marxismo cultural, a Escola de Frankfurt, Antonio Gramsci e a ocupação estratégica de espaços nas instituições e na educação.',
+    instructor: 'Corpo Docente UN2D Academy',
+    instructorTitle: 'Especialistas em Filosofia Política e História das Ideias',
+    thumbnail: '/assets/aistudio/IMG-20261105-WA0105_742318b3.jpg',
+    heroImage: '/assets/aistudio/IMG-20261105-WA0105_742318b3.jpg',
+    progress: 10,
+    duration: '35h',
+    modulesCount: 3,
+    materials: [
+      { id: 'mat-neo-1', title: 'Caderno de Análise Política: O Marxismo Cultural e suas Fases (PDF)', type: 'pdf', url: EDU_PDF_URL, isDownloaded: true },
+      { id: 'mat-neo-2', title: 'Roteiro de Estudos: Hegemonia, Linguagem e Resistência Ética', type: 'pdf', url: EDU_PDF_URL, isDownloaded: false }
+    ],
+    modules: [
+      {
+        title: 'Módulo 1: Das Raízes ao Neo Marxismo Cultural',
+        lessons: [
+          { 
+            id: 'neo-aula-1', 
+            title: 'Neo Marxismo - Estratégias e Desconstrução Cultural', 
+            duration: '42 min', 
+            completed: false, 
+            videoUrl: 'https://youtu.be/W69zbmLJmeU?is=yoUJ5AY4nNRXkdsI' 
+          },
+          { 
+            id: 'neo-aula-2', 
+            title: 'Escola de Frankfurt, Teoria Crítica e Sociedade', 
+            duration: '35 min', 
+            completed: false, 
+            videoUrl: 'https://youtu.be/W69zbmLJmeU?is=yoUJ5AY4nNRXkdsI' 
+          }
+        ]
+      },
+      {
+        title: 'Módulo 2: Gramscismo e Ocupação de Espaços',
+        lessons: [
+          { 
+            id: 'neo-aula-3', 
+            title: 'A Guerra Cultural no Cotidiano e o Resgate da Autonomia', 
+            duration: '40 min', 
+            completed: false, 
+            videoUrl: 'https://youtu.be/W69zbmLJmeU?is=yoUJ5AY4nNRXkdsI' 
+          }
+        ]
+      }
+    ]
+  },
   {
     id: 'eja-fundamental',
     title: 'EDUCAÇÃO DE JOVENS E ADULTO - EJA FUNDAMENTAL',
     tagline: 'Alfabetização e Fortalecimento dos Conhecimentos Básicos',
     category: Category.Educacao,
     description: 'Curso completo de reforço em leitura, escrita, raciocínio lógico e noções fundamentais para jovens e adultos em busca de autonomia e qualificação.',
-    instructor: 'Corpo Docente UNDD Academy',
+    instructor: 'Corpo Docente UN2D Academy',
     instructorTitle: 'Especialistas em Educação Básica e EJA',
     thumbnail: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop',
     heroImage: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop',
@@ -210,7 +312,7 @@ export const EDUCACAO_COURSES: Course[] = [
     tagline: 'Foco nos Conteúdos Decisivos para Aprovação',
     category: Category.Educacao,
     description: 'Simulados comentados, exercícios das principais bancas do país e resolução passo a passo em matérias essenciais para o sucesso acadêmico.',
-    instructor: 'Corpo Docente UNDD Academy',
+    instructor: 'Corpo Docente UN2D Academy',
     thumbnail: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop',
     heroImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1200&auto=format&fit=crop',
     progress: 0,
@@ -454,7 +556,7 @@ export const SUSTENTABILIDADE_COURSES: Course[] = [
     tagline: 'Da Bauxita à Reciclagem Infinita com Alta Eficiência',
     category: Category.Sustentabilidade,
     description: 'Entenda o ciclo completo, a tecnologia de extração responsável, mitigação de impactos e a alta circularidade do alumínio na economia moderna.',
-    instructor: 'Equipe de Engenharia Ambiental UNDD',
+    instructor: 'Equipe de Engenharia Ambiental UN2D',
     thumbnail: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop',
     heroImage: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1200&auto=format&fit=crop',
     progress: 50,
@@ -476,7 +578,7 @@ export const SUSTENTABILIDADE_COURSES: Course[] = [
     tagline: 'Imersão nos Biomas Nacionais e Conservação Prática',
     category: Category.Sustentabilidade,
     description: 'Uma jornada visual em 360 graus pelos ecossistemas brasileiros, demonstrando o equilíbrio entre conservação, pesquisa e manejo sustentável.',
-    instructor: 'Expedições UNDD Academy',
+    instructor: 'Expedições UN2D Academy',
     thumbnail: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=800&auto=format&fit=crop',
     heroImage: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=1200&auto=format&fit=crop',
     progress: 0,

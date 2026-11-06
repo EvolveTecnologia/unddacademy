@@ -4,7 +4,7 @@ import { Logo } from './Logo';
 const Preloader: React.FC = () => {
   return (
     <div className="fixed inset-0 z-[999] bg-[#060B18] flex flex-col items-center justify-center overflow-hidden">
-      {/* Background Radial Glow with UNDD Blue */}
+      {/* Background Radial Glow with UN2D Blue */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(30,64,175,0.25)_0%,transparent_70%)]" />
       
       <div className="relative z-10 flex flex-col items-center">
@@ -12,7 +12,7 @@ const Preloader: React.FC = () => {
           <Logo inverted={true} size="xl" className="h-16 sm:h-20 w-auto" />
         </div>
         
-        {/* Cinematic Progress Bar with UNDD Academy brand colors */}
+        {/* Cinematic Progress Bar with UN2D Academy brand colors */}
         <div className="flex flex-col items-center space-y-4">
           <div className="w-64 h-[3px] bg-white/10 rounded-full overflow-hidden relative">
             <div className="h-full bg-gradient-to-r from-[#1E40AF] via-[#3B82F6] to-[#F59E0B] shadow-[0_0_15px_rgba(59,130,246,0.6)] animate-load-progress" />
@@ -20,7 +20,7 @@ const Preloader: React.FC = () => {
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B] animate-ping" />
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-300 animate-pulse">
-              Carregando UNDD Academy...
+              Carregando UN2D Academy...
             </span>
           </div>
         </div>

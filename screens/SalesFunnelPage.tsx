@@ -320,7 +320,7 @@ export const SalesFunnelPage: React.FC<SalesFunnelPageProps> = ({
           <div className="space-y-3 text-center md:text-left">
             <span className="text-xs font-black text-[#F59E0B] uppercase tracking-widest block">Docente Responsável &amp; Coordenação</span>
             <h3 className="text-xl sm:text-2xl font-black text-white">{course.instructor}</h3>
-            <p className="text-xs font-bold text-blue-400">{course.instructorTitle || 'Docente Especialista da UNDD Academy'}</p>
+            <p className="text-xs font-bold text-blue-400">{course.instructorTitle || 'Docente Especialista da UN2D Academy'}</p>
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-2xl">
               Especialista comprometido com o ensino técnico, ético e emancipador. Membro do corpo docente da União Nacional de Docentes de Direita, estruturando conteúdos focados nas reais demandas do mercado de trabalho, mérito e produtividade.
             </p>
